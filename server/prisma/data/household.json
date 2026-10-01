@@ -1,11 +1,9 @@
 {
   "household": {
     "name": "The Demo Family",
-    "inviteCode": "DEMO-FRIDGE-2026",
     "groceryDayPreference": 6,
     "runThresholdDays": 2
   },
-  "defaultPassword": "demo1234",
   "members": [
     {
       "key": "alex",

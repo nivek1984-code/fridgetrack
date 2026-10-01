@@ -81,8 +81,7 @@ export interface Member {
 }
 
 export interface HouseholdData {
-  household: { name: string; inviteCode: string; groceryDayPreference: number; runThresholdDays: number };
-  defaultPassword: string;
+  household: { name: string; groceryDayPreference: number; runThresholdDays: number };
   members: Member[];
   eatOutEstimates: Record<string, { kcal: number; sugar: number }>;
   familyTakeaways: string[];
