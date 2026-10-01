@@ -9,7 +9,8 @@ A family grocery & fridge tracker: tracks what's in the fridge (current + full h
 ```bash
 npm install
 cp server/.env.example server/.env          # first time only
-cd server && npx prisma migrate dev && cd ..  # first time only: creates + seeds the SQLite DB
+cd server && npx prisma migrate dev && cd ..  # first time only: creates the SQLite DB
+npm run seed                                  # first time only: loads the demo family
 npm run dev
 ```
 
@@ -38,7 +39,7 @@ Add `ANTHROPIC_API_KEY=sk-ant-...` to `server/.env` and restart. The Health page
 | Command | What it does |
 |---|---|
 | `npm run generate` | Rebuild `server/prisma/data/generated/*.json` (options: `-- --seed 7 --end 2026-10-01 --days 120`) |
-| `npm run seed` | Wipe and reload the database (run `generate` first to move the demo up to today) |
+| `npm run seed` | Wipe and reload the database (run `generate` first to move the demo up to today). Only runs against a local `file:` database outside production unless `ALLOW_DESTRUCTIVE_SEED=1`; set `SEED_PASSWORD` to use something other than `demo1234` |
 | `npm run data:report` | Print fridge contents, per-member nutrition, waste, upcoming meals |
 | `npm test` | Data-generator tests |
 
