@@ -1,5 +1,6 @@
 {
  "seed": 42,
+ "tzOffsetMinutes": -480,
  "startDate": "2026-05-30",
  "endDate": "2026-10-01",
  "days": 125,

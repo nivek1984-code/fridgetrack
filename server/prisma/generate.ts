@@ -50,7 +50,7 @@ export interface ShoppingRec {
   unit: string; reason: "RUN_OUT" | "EXPIRING" | "MANUAL"; addedById: string; checked: boolean; createdAt: string;
 }
 export interface GeneratedData {
-  meta: { seed: number; startDate: string; endDate: string; days: number; generatedBy: string; stats: Record<string, number> };
+  meta: { seed: number; tzOffsetMinutes: number; startDate: string; endDate: string; days: number; generatedBy: string; stats: Record<string, number> };
   inventoryBatches: BatchRec[];
   inventoryEvents: EventRec[];
   mealPlan: MealPlanRec[];
@@ -58,7 +58,13 @@ export interface GeneratedData {
   shoppingList: ShoppingRec[];
 }
 
-export interface GenerateOptions { seed?: number; endDate?: string; days?: number }
+export interface GenerateOptions {
+  seed?: number;
+  endDate?: string;
+  days?: number;
+  /** Minutes to add to local clock times to get UTC (Date#getTimezoneOffset). Defaults to this machine's zone. */
+  tzOffsetMinutes?: number;
+}
 
 // ---------- helpers ----------
 function mulberry32(a: number) {
@@ -76,8 +82,9 @@ const pad = (n: number, w: number) => String(n).padStart(w, "0");
 
 export function generateData(opts: GenerateOptions = {}): GeneratedData {
   const seed = opts.seed ?? 42;
+  const tzOffset = opts.tzOffsetMinutes ?? new Date().getTimezoneOffset();
   const days = opts.days ?? 120;
-  const end = opts.endDate ? new Date(`${opts.endDate}T00:00:00Z`) : new Date(new Date().toISOString().slice(0, 10) + "T00:00:00Z");
+  const end = new Date(`${opts.endDate ?? new Date().toLocaleDateString("en-CA")}T00:00:00Z`);
   const rand = mulberry32(seed);
 
   const catalog = loadCatalog();
@@ -112,7 +119,8 @@ export function generateData(opts: GenerateOptions = {}): GeneratedData {
   while (start.getUTCDay() !== groceryDow) start = new Date(start.getTime() - DAY_MS);
   const totalDays = Math.round((end.getTime() - start.getTime()) / DAY_MS) + 1;
   const dayDate = (i: number) => new Date(start.getTime() + i * DAY_MS);
-  const ts = (i: number, minutes: number) => new Date(start.getTime() + i * DAY_MS + minutes * 60_000).toISOString();
+  // `minutes` is a local clock time on day i; convert to a UTC timestamp.
+  const ts = (i: number, minutes: number) => new Date(start.getTime() + i * DAY_MS + (minutes + tzOffset) * 60_000).toISOString();
   const dow = (i: number) => dayDate(i).getUTCDay();
   const isWeekend = (i: number) => dow(i) === 0 || dow(i) === 6;
 
@@ -348,7 +356,9 @@ export function generateData(opts: GenerateOptions = {}): GeneratedData {
   // ---------- daily simulation ----------
   type Action = { t: number; seq: number; run: (minutes: number) => void };
   let seq = 0;
-  const cutoffMinutes = 13 * 60; // on the final day ("today") stop after lunch
+  // On the final day ("today") stop after lunch — or at the current time if that is earlier, so nothing is in the future.
+  const now = new Date();
+  const cutoffMinutes = opts.endDate ? 13 * 60 : Math.max(0, Math.min(13 * 60, now.getHours() * 60 + now.getMinutes()));
 
   for (let i = 0; i < totalDays; i++) {
     const w = dow(i);
@@ -555,7 +565,7 @@ export function generateData(opts: GenerateOptions = {}): GeneratedData {
 
   // ---------- open shopping list for "today" ----------
   const lastDay = totalDays - 1;
-  const nowIso = ts(lastDay, 13 * 60);
+  const nowIso = ts(lastDay, cutoffMinutes);
   const shoppingList: ShoppingRec[] = [];
   let nShop = 0;
   const addShop = (s: Omit<ShoppingRec, "id" | "householdId" | "checked" | "createdAt">) =>
@@ -583,7 +593,7 @@ export function generateData(opts: GenerateOptions = {}): GeneratedData {
   };
 
   return {
-    meta: { seed, startDate: start.toISOString().slice(0, 10), endDate: end.toISOString().slice(0, 10), days: totalDays, generatedBy: "prisma/generate.ts", stats },
+    meta: { seed, tzOffsetMinutes: tzOffset, startDate: start.toISOString().slice(0, 10), endDate: end.toISOString().slice(0, 10), days: totalDays, generatedBy: "prisma/generate.ts", stats },
     inventoryBatches: batches,
     inventoryEvents: events,
     mealPlan: mealPlan.sort((a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id)),

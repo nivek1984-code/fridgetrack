@@ -3,15 +3,15 @@ import { generateData } from "../prisma/generate.js";
 import { foodId, loadCatalog, loadHousehold, loadRecipes, recipeId, userId } from "../prisma/lib/data.js";
 
 const END = "2026-10-01";
-const data = generateData({ seed: 42, endDate: END, days: 120 });
+const data = generateData({ seed: 42, endDate: END, days: 120, tzOffsetMinutes: 0 });
 
 describe("generateData", () => {
   it("is deterministic for the same seed and end date", () => {
-    expect(generateData({ seed: 42, endDate: END, days: 120 })).toEqual(data);
+    expect(generateData({ seed: 42, endDate: END, days: 120, tzOffsetMinutes: 0 })).toEqual(data);
   });
 
   it("produces different data for a different seed", () => {
-    expect(generateData({ seed: 7, endDate: END, days: 120 }).inventoryEvents).not.toEqual(data.inventoryEvents);
+    expect(generateData({ seed: 7, endDate: END, days: 120, tzOffsetMinutes: 0 }).inventoryEvents).not.toEqual(data.inventoryEvents);
   });
 
   it("spans at least 120 days and ends on the end date", () => {
