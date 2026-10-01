@@ -20,6 +20,7 @@ import {
   userId,
   type CatalogEntry,
   type HabitItem,
+  type HouseholdData,
   type Member,
   type RecipeEntry,
 } from "./lib/data.js";
@@ -64,6 +65,10 @@ export interface GenerateOptions {
   days?: number;
   /** Minutes to add to local clock times to get UTC (Date#getTimezoneOffset). Defaults to this machine's zone. */
   tzOffsetMinutes?: number;
+  /** Fixture overrides (default: the JSON files in prisma/data). */
+  catalog?: CatalogEntry[];
+  recipes?: RecipeEntry[];
+  household?: HouseholdData;
 }
 
 // ---------- helpers ----------
@@ -87,9 +92,9 @@ export function generateData(opts: GenerateOptions = {}): GeneratedData {
   const end = new Date(`${opts.endDate ?? new Date().toLocaleDateString("en-CA")}T00:00:00Z`);
   const rand = mulberry32(seed);
 
-  const catalog = loadCatalog();
-  const recipes = loadRecipes();
-  const hh = loadHousehold();
+  const catalog = opts.catalog ?? loadCatalog();
+  const recipes = opts.recipes ?? loadRecipes();
+  const hh = opts.household ?? loadHousehold();
   const members = hh.members;
   const groceryDow = hh.household.groceryDayPreference;
 
@@ -112,6 +117,7 @@ export function generateData(opts: GenerateOptions = {}): GeneratedData {
     m.habits.snacks.forEach((s) => food(s.food)); m.habits.drinks.forEach((d) => food(d.food));
     m.habits.weekdayLunch.packedRecipes.forEach(recipe);
     m.habits.breakfasts.forEach((b) => (b.recipe ? recipe(b.recipe) : food(b.food!)));
+    if (m.habits.picky) recipe(m.habits.picky.fallbackFood);
   }
 
   // Start on the grocery day on/before (end - days + 1) so day 0 is a full shop.
@@ -238,10 +244,36 @@ export function generateData(opts: GenerateOptions = {}): GeneratedData {
       if (amt > 0) consume(n, amt, at, by, source, mealId);
     }
   };
+  const hasTag = (r: RecipeEntry, t: string) => r.tags.split(",").includes(t);
+  /**
+   * Cook a planned family meal and log each diner eating it. Every diner is checked for
+   * allergens first, for every meal type. With `fallbacks` (dinner), an allergic diner
+   * gets their picky-eater fallback dish if it is safe for them, and picky diners may
+   * also refuse on taste; otherwise an allergic diner just skips the dish.
+   */
+  function serveFamilyMeal(entry: MealPlanRec, r: RecipeEntry, servings: number, t: string, by: string, diners: Member[], fallbacks = false) {
+    cook(r, servings, t, by, "MEAL_PLAN", entry.id);
+    entry.cookedAt = t;
+    for (const m of diners) {
+      const p = m.habits.portion;
+      const picky = fallbacks ? m.habits.picky : undefined;
+      const refuses = hasAllergen(m, r) || (!!picky && picky.refuseTags.some((tag) => hasTag(r, tag)) && chance(picky.refuseProb));
+      if (refuses) {
+        const fb = picky ? recipe(picky.fallbackFood) : undefined;
+        if (fb && !hasAllergen(m, fb)) {
+          cook(fb, p, t, by, "MEAL_PLAN", null);
+          const nu = recipeNutrition(fb, p);
+          log({ userId: userId(m.key), date: t, mealType: entry.mealType, recipeId: recipeId(fb.name), foodItemId: null, quantity: r2(p), freeText: `Refused ${r.name}` }, p, nu.kcal, nu.sugar);
+        }
+        continue;
+      }
+      const nu = recipeNutrition(r, p);
+      log({ userId: userId(m.key), date: t, mealType: entry.mealType, recipeId: recipeId(r.name), foodItemId: null, quantity: r2(p), freeText: null }, p, nu.kcal, nu.sugar);
+    }
+  }
 
   // ---------- meal planning ----------
   const favCount = (r: RecipeEntry) => members.filter((m) => m.favourites.recipes.includes(r.name)).length;
-  const hasTag = (r: RecipeEntry, t: string) => r.tags.split(",").includes(t);
   const dinners = recipes.filter((r) => r.mealType === "DINNER");
   const weekendBreakfasts = recipes.filter((r) => r.mealType === "BREAKFAST" && (hasTag(r, "weekend") || r.name === "Scrambled Eggs on Toast"));
   const weekendLunches = ["Tomato Soup & Toast", "Cheese Toasties", "Chickpea Salad", "Hummus Veggie Wraps", "Chicken Caesar Wraps"].map(recipe);
@@ -390,22 +422,13 @@ export function generateData(opts: GenerateOptions = {}): GeneratedData {
       const fam = weekend ? plan("BREAKFAST") : undefined;
       if (fam) {
         const r = nameOfRecipeId.get(fam.recipeId)!;
-        if (feasible(r, fam.servings)) {
-          const by = cooks[i % 2];
-          cook(r, fam.servings, t, by, "MEAL_PLAN", fam.id);
-          fam.cookedAt = t;
-          for (const m of members) {
-            if (hasAllergen(m, r)) continue;
-            const p = m.habits.portion;
-            const nu = recipeNutrition(r, p);
-            log({ userId: userId(m.key), date: t, mealType: "BREAKFAST", recipeId: recipeId(r.name), foodItemId: null, quantity: r2(p), freeText: null }, p, nu.kcal, nu.sugar);
-          }
-          return;
-        }
+        if (feasible(r, fam.servings)) return serveFamilyMeal(fam, r, fam.servings, t, cooks[i % 2], members);
       }
       for (const m of members) {
         if (chance(m.habits.breakfastSkipProb)) continue;
-        const options = m.habits.breakfasts.filter((b) => (b.recipe ? feasible(recipe(b.recipe), 1) : stock(b.food!) >= b.qty! * 0.8));
+        const options = m.habits.breakfasts.filter((b) => (b.recipe
+          ? !hasAllergen(m, recipe(b.recipe)) && feasible(recipe(b.recipe), 1)
+          : !foodAllergen(m, food(b.food!)) && stock(b.food!) >= b.qty! * 0.8));
         const b = weighted(options, (o) => o.weight);
         if (!b) { log({ userId: userId(m.key), date: t, mealType: "BREAKFAST", recipeId: null, foodItemId: null, quantity: null, freeText: "Bought breakfast on the way", }, 1, 420, 22); continue; }
         const p = m.habits.portion;
@@ -434,21 +457,12 @@ export function generateData(opts: GenerateOptions = {}): GeneratedData {
       const fam = weekend ? plan("LUNCH") : undefined;
       if (fam) {
         const r = nameOfRecipeId.get(fam.recipeId)!;
-        if (feasible(r, fam.servings)) {
-          cook(r, fam.servings, t, cooks[(i + 1) % 2], "MEAL_PLAN", fam.id);
-          fam.cookedAt = t;
-          for (const m of members) {
-            const p = m.habits.portion;
-            const nu = recipeNutrition(r, p);
-            log({ userId: userId(m.key), date: t, mealType: "LUNCH", recipeId: recipeId(r.name), foodItemId: null, quantity: r2(p), freeText: null }, p, nu.kcal, nu.sugar);
-          }
-          return;
-        }
+        if (feasible(r, fam.servings)) return serveFamilyMeal(fam, r, fam.servings, t, cooks[(i + 1) % 2], members);
       }
       for (const m of members) {
         const wl = m.habits.weekdayLunch;
         const p = m.habits.portion;
-        const options = wl.packedRecipes.map(recipe).filter((r) => feasible(r, p));
+        const options = wl.packedRecipes.map(recipe).filter((r) => !hasAllergen(m, r) && feasible(r, p));
         if (!weekend && options.length && chance(wl.packedProb)) {
           const r = pick(options);
           cook(r, p, t, m.key, "PACKED_LUNCH", null);
@@ -511,22 +525,7 @@ export function generateData(opts: GenerateOptions = {}): GeneratedData {
         r = alt;
         entry = addPlan(i, alt, servings);
       }
-      const by = cooks[i % 2];
-      cook(r, servings, t, by, "MEAL_PLAN", entry!.id);
-      entry!.cookedAt = t;
-      for (const m of home) {
-        const p = m.habits.portion;
-        const refuses = hasAllergen(m, r) || (m.habits.picky && m.habits.picky.refuseTags.some((tag) => hasTag(r!, tag)) && chance(m.habits.picky.refuseProb));
-        if (refuses && m.habits.picky) {
-          const fb = recipe(m.habits.picky.fallbackFood);
-          cook(fb, p, t, by, "MEAL_PLAN", null);
-          const nu = recipeNutrition(fb, p);
-          log({ userId: userId(m.key), date: t, mealType: "DINNER", recipeId: recipeId(fb.name), foodItemId: null, quantity: r2(p), freeText: `Refused ${r.name}` }, p, nu.kcal, nu.sugar);
-          continue;
-        }
-        const nu = recipeNutrition(r, p);
-        log({ userId: userId(m.key), date: t, mealType: "DINNER", recipeId: recipeId(r.name), foodItemId: null, quantity: r2(p), freeText: null }, p, nu.kcal, nu.sugar);
-      }
+      serveFamilyMeal(entry!, r, servings, t, cooks[i % 2], home, true);
     });
 
     // Planned dessert
@@ -535,13 +534,7 @@ export function generateData(opts: GenerateOptions = {}): GeneratedData {
       if (!d) return;
       const r = nameOfRecipeId.get(d.recipeId)!;
       if (!feasible(r, d.servings)) return;
-      const t = ts(i, 20 * 60);
-      cook(r, d.servings, t, cooks[i % 2], "MEAL_PLAN", d.id);
-      d.cookedAt = t;
-      for (const m of members) {
-        const nu = recipeNutrition(r, m.habits.portion);
-        log({ userId: userId(m.key), date: t, mealType: "SNACK", recipeId: recipeId(r.name), foodItemId: null, quantity: r2(m.habits.portion), freeText: null }, m.habits.portion, nu.kcal, nu.sugar);
-      }
+      serveFamilyMeal(d, r, d.servings, ts(i, 20 * 60), cooks[i % 2], members);
     });
 
     actions.sort((a, b) => a.t - b.t || a.seq - b.seq);
