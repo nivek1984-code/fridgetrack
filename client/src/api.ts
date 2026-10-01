@@ -39,13 +39,14 @@ export interface FoodItem {
   kcal: number | null; proteinG: number | null; sugarG: number | null; satFatG: number | null; fibreG: number | null; sodiumMg: number | null;
   allergens: string | null;
 }
-export interface CatalogItem extends FoodItem { stock: number; nextExpiry: string | null; favouriteId: string | null }
+export interface CatalogItem extends FoodItem { stock: number; expiredStock: number; nextExpiry: string | null; favouriteId: string | null }
 
 export interface Batch {
   id: string; foodItemId: string; quantity: number; remainingQuantity: number; unit: Unit;
   purchasedAt: string; expiresAt: string | null; location: string; status: string; pricePaid: number | null;
 }
-export interface InventoryBatch extends Batch { foodItem: FoodItem; addedBy: { name: string } | null; daysToExpiry: number | null }
+export type ExpiryStatus = "EXPIRED" | "EXPIRING" | "OK" | "NO_DATE";
+export interface InventoryBatch extends Batch { foodItem: FoodItem; addedBy: { name: string } | null; daysToExpiry: number | null; expiryStatus: ExpiryStatus }
 
 export interface ItemDetail {
   item: FoodItem;

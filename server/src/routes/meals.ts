@@ -21,8 +21,8 @@ mealsRouter.get("/recipes", async (req, res) => {
   ]);
   res.json(recipes.map((r) => {
     const missing = r.ingredients
-      .filter((i) => (stock.get(i.foodItemId)?.qty ?? 0) < i.quantity)
-      .map((i) => ({ name: i.foodItem.name, need: i.quantity, have: r1(stock.get(i.foodItemId)?.qty ?? 0), unit: i.unit }));
+      .filter((i) => (stock.get(i.foodItemId)?.usable ?? 0) < i.quantity)
+      .map((i) => ({ name: i.foodItem.name, need: i.quantity, have: r1(stock.get(i.foodItemId)?.usable ?? 0), unit: i.unit }));
     const perServing = r.ingredients.reduce((s, i) => {
       const n = nutritionFor(i.foodItem, i.quantity / r.servings);
       return { kcal: s.kcal + n.kcal, sugarG: s.sugarG + n.sugarG, proteinG: s.proteinG + n.proteinG };

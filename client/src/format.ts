@@ -1,7 +1,10 @@
 import type { Unit } from "./api";
 
 export function fmtQty(qty: number, unit: Unit | string) {
-  if (unit === "pcs") return `${Math.round(qty * 10) / 10} pcs`;
+  if (unit === "pcs") {
+    const n = Math.round(qty * 10) / 10;
+    return `${n} ${n === 1 ? "pc" : "pcs"}`;
+  }
   if (qty >= 1000) return `${Math.round(qty / 100) / 10} ${unit === "g" ? "kg" : "L"}`;
   return `${Math.round(qty)} ${unit}`;
 }

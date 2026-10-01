@@ -1,8 +1,9 @@
 import { Router } from "express";
 import { z } from "zod";
 import { prisma } from "../db.js";
-import { DAY_MS, HttpError, addDays, notFound, parse, r1, startOfDay } from "../http.js";
+import { HttpError, addDays, notFound, parse, r1, startOfDay } from "../http.js";
 import { me } from "../middleware/auth.js";
+import { daysUntilExpiry, expiryStatus } from "../services/expiry.js";
 import { addBatch, assertFoodInHousehold, consumeFIFO, discardBatch, nutritionFor, stockByFood } from "../services/inventory.js";
 
 export const inventoryRouter = Router();
@@ -21,8 +22,9 @@ inventoryRouter.get("/items", async (req, res) => {
   const favIds = new Map(favs.map((f) => [f.foodItemId!, f.id]));
   res.json(items.map((i) => ({
     ...i,
-    stock: r1(stock.get(i.id)?.qty ?? 0),
-    nextExpiry: stock.get(i.id)?.nextExpiry ?? null,
+    stock: r1(stock.get(i.id)?.total ?? 0),
+    expiredStock: r1(stock.get(i.id)?.expired ?? 0),
+    nextExpiry: stock.get(i.id)?.next?.expiresAt ?? null,
     favouriteId: favIds.get(i.id) ?? null,
   })));
 });
@@ -112,10 +114,11 @@ inventoryRouter.get("/inventory", async (req, res) => {
     include: { foodItem: true, addedBy: { select: { name: true } } },
     orderBy: [{ expiresAt: "asc" }],
   });
-  res.json(batches.map((b) => ({
-    ...b,
-    daysToExpiry: b.expiresAt ? Math.floor((startOfDay(b.expiresAt).getTime() - startOfDay(new Date()).getTime()) / DAY_MS) : null,
-  })));
+  const now = new Date();
+  res.json(batches.map((b) => {
+    const daysToExpiry = daysUntilExpiry(b.expiresAt, now);
+    return { ...b, daysToExpiry, expiryStatus: expiryStatus(daysToExpiry) };
+  }));
 });
 
 const AddStock = z.object({

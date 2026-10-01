@@ -1,5 +1,6 @@
 // Prints a sanity-check summary of what's in the database.
 import { PrismaClient } from "@prisma/client";
+import { daysUntilExpiry, expiryStatus, fmtExpiry, fmtQty, groupStock, locationName } from "../services/expiry.js";
 
 const prisma = new PrismaClient();
 const fmt = (n: number, d = 0) => n.toLocaleString("en-GB", { maximumFractionDigits: d });
@@ -26,18 +27,23 @@ async function main() {
   const now = last?.createdAt ?? new Date();
   console.log(`History: ${first?.createdAt.toISOString().slice(0, 10)} -> ${now.toISOString().slice(0, 10)}`);
 
-  console.log("\n== Current fridge (active batches) ==");
-  const active = await prisma.inventoryBatch.findMany({ where: { status: "ACTIVE" }, include: { foodItem: true }, orderBy: { expiresAt: "asc" } });
-  const byFood = new Map<string, { qty: number; unit: string; nextExpiry: Date | null; location: string }>();
-  for (const b of active) {
-    const e = byFood.get(b.foodItem.name) ?? { qty: 0, unit: b.unit, nextExpiry: b.expiresAt, location: b.location };
-    e.qty += b.remainingQuantity;
-    byFood.set(b.foodItem.name, e);
+  console.log("\n== Inventory (active batches) ==");
+  const active = await prisma.inventoryBatch.findMany({ where: { status: "ACTIVE" }, include: { foodItem: true } });
+  // Group per location first so a part-frozen item shows up under both, then per food with a per-batch breakdown.
+  for (const loc of new Set(["FRIDGE", "FREEZER", "PANTRY", ...active.map((b) => b.location)])) {
+    const here = groupStock(active.filter((b) => b.location === loc), now);
+    if (!here.length) continue;
+    here.sort((a, b) => (a.batches[0].daysToExpiry ?? Infinity) - (b.batches[0].daysToExpiry ?? Infinity));
+    console.log(`\n-- ${locationName(loc)} --`);
+    console.table(here.map((s) => ({
+      item: s.batches[0].foodItem.name,
+      total: fmtQty(s.total, s.unit),
+      status: s.expired && !s.usable ? "⚠ EXPIRED" : s.expired ? "⚠ part expired" : s.next?.expiryStatus === "EXPIRING" ? "use soon" : "ok",
+      batches: s.batches.map((b) => `${fmtQty(b.remainingQuantity, b.unit)} ${fmtExpiry(b.daysToExpiry)}`).join("; "),
+    })));
   }
-  console.table([...byFood].map(([name, e]) => ({
-    item: name, qty: `${fmt(e.qty, 1)} ${e.unit}`, location: e.location,
-    expiresInDays: e.nextExpiry ? Math.round((e.nextExpiry.getTime() - now.getTime()) / 86_400_000) : "",
-  })));
+  const expiredBatches = active.filter((b) => expiryStatus(daysUntilExpiry(b.expiresAt, now)) === "EXPIRED");
+  console.log(`${active.length} active batches, ${expiredBatches.length} past their expiry date`);
 
   console.log("\n== Per-member daily averages (last 30 days) ==");
   const since = new Date(now.getTime() - 30 * 86_400_000);
