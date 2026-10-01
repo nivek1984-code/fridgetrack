@@ -65,6 +65,44 @@ describe("generateData", () => {
     }
   });
 
+  describe("allergen safety with injected fixtures", () => {
+    const catalog = loadCatalog();
+    const nutFoods = new Set(catalog.filter((f) => f.allergens?.includes("nuts")).map((f) => f.name));
+    const nutRecipeIds = (recipes: ReturnType<typeof loadRecipes>) =>
+      new Set(recipes.filter((r) => r.ingredients.some(([n]) => nutFoods.has(n))).map((r) => recipeId(r.name)));
+    const allergicIds = (hh: ReturnType<typeof loadHousehold>) =>
+      new Set(hh.members.filter((m) => m.allergies?.includes("nuts")).map((m) => userId(m.key)));
+    const expectNoNutLogs = (out: ReturnType<typeof generateData>, nutIds: Set<string>, allergic: Set<string>) => {
+      expect(allergic.size).toBeGreaterThan(0);
+      // Sanity: a nut dish was actually served to the family, so the check below isn't vacuous.
+      expect(out.eatingLogs.some((l) => l.recipeId && nutIds.has(l.recipeId))).toBe(true);
+      const bad = out.eatingLogs.filter((l) => allergic.has(l.userId) && l.recipeId && nutIds.has(l.recipeId));
+      expect(bad).toEqual([]);
+    };
+
+    it("keeps allergic members off nut-containing weekend lunches and desserts", () => {
+      const recipes = loadRecipes();
+      recipes.find((r) => r.name === "Tomato Soup & Toast")!.ingredients.push(["Pesto", 30]);
+      recipes.find((r) => r.name === "Ice Cream Sundae")!.ingredients.push(["Mixed Nuts", 40]);
+      const household = loadHousehold();
+      const out = generateData({ seed: 42, endDate: END, days: 120, tzOffsetMinutes: 0, recipes, household });
+      const nutIds = new Set([recipeId("Tomato Soup & Toast"), recipeId("Ice Cream Sundae")]);
+      expect([...nutIds].every((id) => out.mealPlan.some((e) => e.recipeId === id && e.cookedAt))).toBe(true);
+      expectNoNutLogs(out, nutRecipeIds(recipes), allergicIds(household));
+    });
+
+    it("keeps an allergic member who is not a picky eater off nut-containing dishes", () => {
+      const recipes = loadRecipes();
+      recipes.find((r) => r.name === "Tomato Soup & Toast")!.ingredients.push(["Pesto", 30]);
+      recipes.find((r) => r.name === "Ice Cream Sundae")!.ingredients.push(["Mixed Nuts", 40]);
+      const household = loadHousehold();
+      for (const m of household.members) delete m.habits.picky;
+      household.members.find((m) => m.key === "jordan")!.allergies = "nuts";
+      const out = generateData({ seed: 42, endDate: END, days: 120, tzOffsetMinutes: 0, recipes, household });
+      expectNoNutLogs(out, nutRecipeIds(recipes), allergicIds(household));
+    });
+  });
+
   it("leaves a realistic current state: stocked fridge, upcoming plan, some waste", () => {
     expect(data.inventoryBatches.filter((b) => b.status === "ACTIVE").length).toBeGreaterThan(30);
     expect(data.meta.stats.upcomingMeals).toBeGreaterThanOrEqual(7);
