@@ -1,0 +1,38 @@
+[
+ {
+  "id": "shop_001",
+  "householdId": "household_demo",
+  "checked": false,
+  "createdAt": "2026-10-01T13:00:00.000Z",
+  "foodItemId": null,
+  "name": "Birthday cake for Mia",
+  "quantity": 1,
+  "unit": "pcs",
+  "reason": "MANUAL",
+  "addedById": "user_sam"
+ },
+ {
+  "id": "shop_002",
+  "householdId": "household_demo",
+  "checked": false,
+  "createdAt": "2026-10-01T13:00:00.000Z",
+  "foodItemId": "food_strawberries",
+  "name": "Strawberries",
+  "quantity": 400,
+  "unit": "g",
+  "reason": "MANUAL",
+  "addedById": "user_mia"
+ },
+ {
+  "id": "shop_003",
+  "householdId": "household_demo",
+  "checked": false,
+  "createdAt": "2026-10-01T13:00:00.000Z",
+  "foodItemId": "food_protein-bars",
+  "name": "Protein Bars",
+  "quantity": 6,
+  "unit": "pcs",
+  "reason": "MANUAL",
+  "addedById": "user_jordan"
+ }
+]

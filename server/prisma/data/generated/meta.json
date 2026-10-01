@@ -1,0 +1,17 @@
+{
+ "seed": 42,
+ "startDate": "2026-05-30",
+ "endDate": "2026-10-01",
+ "days": 125,
+ "generatedBy": "prisma/generate.ts",
+ "stats": {
+  "batches": 1050,
+  "events": 6458,
+  "mealPlanEntries": 227,
+  "upcomingMeals": 13,
+  "eatingLogs": 3573,
+  "activeBatches": 117,
+  "discardedBatches": 318,
+  "shoppingListItems": 3
+ }
+}

@@ -1,0 +1,2045 @@
+[
+ {
+  "id": "meal_00001",
+  "householdId": "household_demo",
+  "date": "2026-05-30T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_creamy-pesto-pasta",
+  "servings": 4,
+  "cookedAt": "2026-05-30T18:44:00.000Z"
+ },
+ {
+  "id": "meal_00002",
+  "householdId": "household_demo",
+  "date": "2026-05-30T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_pancakes",
+  "servings": 4,
+  "cookedAt": "2026-05-30T07:24:00.000Z"
+ },
+ {
+  "id": "meal_00003",
+  "householdId": "household_demo",
+  "date": "2026-05-30T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chicken-caesar-wraps",
+  "servings": 4,
+  "cookedAt": "2026-05-30T12:02:00.000Z"
+ },
+ {
+  "id": "meal_00004",
+  "householdId": "household_demo",
+  "date": "2026-05-31T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": "2026-05-31T18:29:00.000Z"
+ },
+ {
+  "id": "meal_00005",
+  "householdId": "household_demo",
+  "date": "2026-05-31T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": "2026-05-31T08:10:00.000Z"
+ },
+ {
+  "id": "meal_00006",
+  "householdId": "household_demo",
+  "date": "2026-05-31T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chickpea-salad",
+  "servings": 4,
+  "cookedAt": "2026-05-31T12:11:00.000Z"
+ },
+ {
+  "id": "meal_00007",
+  "householdId": "household_demo",
+  "date": "2026-05-31T00:00:00.000Z",
+  "mealType": "SNACK",
+  "recipeId": "recipe_ice-cream-sundae",
+  "servings": 4,
+  "cookedAt": "2026-05-31T20:00:00.000Z"
+ },
+ {
+  "id": "meal_00008",
+  "householdId": "household_demo",
+  "date": "2026-06-01T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 4,
+  "cookedAt": "2026-06-01T18:26:00.000Z"
+ },
+ {
+  "id": "meal_00009",
+  "householdId": "household_demo",
+  "date": "2026-06-02T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_tofu-and-veg-curry",
+  "servings": 4,
+  "cookedAt": "2026-06-02T18:43:00.000Z"
+ },
+ {
+  "id": "meal_00010",
+  "householdId": "household_demo",
+  "date": "2026-06-03T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_homemade-pizza",
+  "servings": 4,
+  "cookedAt": "2026-06-03T18:07:00.000Z"
+ },
+ {
+  "id": "meal_00011",
+  "householdId": "household_demo",
+  "date": "2026-06-04T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_baked-salmon-with-broccoli-and-rice",
+  "servings": 4,
+  "cookedAt": "2026-06-04T18:45:00.000Z"
+ },
+ {
+  "id": "meal_00012",
+  "householdId": "household_demo",
+  "date": "2026-06-05T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_cod-with-sweet-potato-wedges",
+  "servings": 4,
+  "cookedAt": "2026-06-05T18:13:00.000Z"
+ },
+ {
+  "id": "meal_00013",
+  "householdId": "household_demo",
+  "date": "2026-06-06T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": "2026-06-06T18:50:00.000Z"
+ },
+ {
+  "id": "meal_00014",
+  "householdId": "household_demo",
+  "date": "2026-06-06T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": "2026-06-06T07:46:00.000Z"
+ },
+ {
+  "id": "meal_00015",
+  "householdId": "household_demo",
+  "date": "2026-06-06T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_tomato-soup-and-toast",
+  "servings": 4,
+  "cookedAt": "2026-06-06T12:29:00.000Z"
+ },
+ {
+  "id": "meal_00016",
+  "householdId": "household_demo",
+  "date": "2026-06-07T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_creamy-pesto-pasta",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00017",
+  "householdId": "household_demo",
+  "date": "2026-06-07T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_full-cooked-breakfast",
+  "servings": 4,
+  "cookedAt": "2026-06-07T07:25:00.000Z"
+ },
+ {
+  "id": "meal_00018",
+  "householdId": "household_demo",
+  "date": "2026-06-07T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_hummus-veggie-wraps",
+  "servings": 4,
+  "cookedAt": "2026-06-07T12:32:00.000Z"
+ },
+ {
+  "id": "meal_00019",
+  "householdId": "household_demo",
+  "date": "2026-06-07T00:00:00.000Z",
+  "mealType": "SNACK",
+  "recipeId": "recipe_ice-cream-sundae",
+  "servings": 4,
+  "cookedAt": "2026-06-07T20:00:00.000Z"
+ },
+ {
+  "id": "meal_00036",
+  "householdId": "household_demo",
+  "date": "2026-06-07T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 5,
+  "cookedAt": "2026-06-07T18:32:00.000Z"
+ },
+ {
+  "id": "meal_00020",
+  "householdId": "household_demo",
+  "date": "2026-06-08T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_frozen-pizza-night",
+  "servings": 4,
+  "cookedAt": "2026-06-08T18:01:00.000Z"
+ },
+ {
+  "id": "meal_00021",
+  "householdId": "household_demo",
+  "date": "2026-06-09T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_roast-chicken-thighs-and-veg",
+  "servings": 4,
+  "cookedAt": "2026-06-09T18:25:00.000Z"
+ },
+ {
+  "id": "meal_00022",
+  "householdId": "household_demo",
+  "date": "2026-06-10T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 4,
+  "cookedAt": "2026-06-10T18:45:00.000Z"
+ },
+ {
+  "id": "meal_00023",
+  "householdId": "household_demo",
+  "date": "2026-06-11T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 4,
+  "cookedAt": "2026-06-11T18:13:00.000Z"
+ },
+ {
+  "id": "meal_00024",
+  "householdId": "household_demo",
+  "date": "2026-06-12T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-stir-fry",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00037",
+  "householdId": "household_demo",
+  "date": "2026-06-12T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_sausage-and-mash",
+  "servings": 4,
+  "cookedAt": "2026-06-12T18:04:00.000Z"
+ },
+ {
+  "id": "meal_00025",
+  "householdId": "household_demo",
+  "date": "2026-06-13T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_homemade-pizza",
+  "servings": 4,
+  "cookedAt": "2026-06-13T18:00:00.000Z"
+ },
+ {
+  "id": "meal_00026",
+  "householdId": "household_demo",
+  "date": "2026-06-13T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00027",
+  "householdId": "household_demo",
+  "date": "2026-06-13T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chickpea-salad",
+  "servings": 4,
+  "cookedAt": "2026-06-13T12:31:00.000Z"
+ },
+ {
+  "id": "meal_00028",
+  "householdId": "household_demo",
+  "date": "2026-06-14T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": "2026-06-14T18:05:00.000Z"
+ },
+ {
+  "id": "meal_00029",
+  "householdId": "household_demo",
+  "date": "2026-06-14T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": "2026-06-14T08:14:00.000Z"
+ },
+ {
+  "id": "meal_00030",
+  "householdId": "household_demo",
+  "date": "2026-06-14T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chicken-caesar-wraps",
+  "servings": 4,
+  "cookedAt": "2026-06-14T12:08:00.000Z"
+ },
+ {
+  "id": "meal_00031",
+  "householdId": "household_demo",
+  "date": "2026-06-15T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_cod-with-sweet-potato-wedges",
+  "servings": 4,
+  "cookedAt": "2026-06-15T18:40:00.000Z"
+ },
+ {
+  "id": "meal_00032",
+  "householdId": "household_demo",
+  "date": "2026-06-16T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_garlic-prawn-linguine",
+  "servings": 4,
+  "cookedAt": "2026-06-16T18:17:00.000Z"
+ },
+ {
+  "id": "meal_00033",
+  "householdId": "household_demo",
+  "date": "2026-06-17T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_baked-salmon-with-broccoli-and-rice",
+  "servings": 4,
+  "cookedAt": "2026-06-17T18:57:00.000Z"
+ },
+ {
+  "id": "meal_00034",
+  "householdId": "household_demo",
+  "date": "2026-06-18T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_tofu-and-veg-curry",
+  "servings": 4,
+  "cookedAt": "2026-06-18T18:28:00.000Z"
+ },
+ {
+  "id": "meal_00035",
+  "householdId": "household_demo",
+  "date": "2026-06-19T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_frozen-pizza-night",
+  "servings": 4,
+  "cookedAt": "2026-06-19T18:19:00.000Z"
+ },
+ {
+  "id": "meal_00038",
+  "householdId": "household_demo",
+  "date": "2026-06-20T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 4,
+  "cookedAt": "2026-06-20T18:05:00.000Z"
+ },
+ {
+  "id": "meal_00039",
+  "householdId": "household_demo",
+  "date": "2026-06-20T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_pancakes",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00040",
+  "householdId": "household_demo",
+  "date": "2026-06-20T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_hummus-veggie-wraps",
+  "servings": 4,
+  "cookedAt": "2026-06-20T12:29:00.000Z"
+ },
+ {
+  "id": "meal_00041",
+  "householdId": "household_demo",
+  "date": "2026-06-21T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": "2026-06-21T18:40:00.000Z"
+ },
+ {
+  "id": "meal_00042",
+  "householdId": "household_demo",
+  "date": "2026-06-21T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_full-cooked-breakfast",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00043",
+  "householdId": "household_demo",
+  "date": "2026-06-21T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chicken-caesar-wraps",
+  "servings": 4,
+  "cookedAt": "2026-06-21T12:41:00.000Z"
+ },
+ {
+  "id": "meal_00044",
+  "householdId": "household_demo",
+  "date": "2026-06-22T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_roast-chicken-thighs-and-veg",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00061",
+  "householdId": "household_demo",
+  "date": "2026-06-22T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_homemade-pizza",
+  "servings": 5,
+  "cookedAt": "2026-06-22T18:08:00.000Z"
+ },
+ {
+  "id": "meal_00045",
+  "householdId": "household_demo",
+  "date": "2026-06-23T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_sausage-and-mash",
+  "servings": 4,
+  "cookedAt": "2026-06-23T18:08:00.000Z"
+ },
+ {
+  "id": "meal_00046",
+  "householdId": "household_demo",
+  "date": "2026-06-24T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_cod-with-sweet-potato-wedges",
+  "servings": 4,
+  "cookedAt": "2026-06-24T18:35:00.000Z"
+ },
+ {
+  "id": "meal_00047",
+  "householdId": "household_demo",
+  "date": "2026-06-25T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-stir-fry",
+  "servings": 4,
+  "cookedAt": "2026-06-25T18:13:00.000Z"
+ },
+ {
+  "id": "meal_00048",
+  "householdId": "household_demo",
+  "date": "2026-06-26T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_homemade-pizza",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00062",
+  "householdId": "household_demo",
+  "date": "2026-06-26T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_frozen-pizza-night",
+  "servings": 5,
+  "cookedAt": "2026-06-26T18:08:00.000Z"
+ },
+ {
+  "id": "meal_00049",
+  "householdId": "household_demo",
+  "date": "2026-06-27T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_garlic-prawn-linguine",
+  "servings": 4,
+  "cookedAt": "2026-06-27T18:43:00.000Z"
+ },
+ {
+  "id": "meal_00050",
+  "householdId": "household_demo",
+  "date": "2026-06-27T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00051",
+  "householdId": "household_demo",
+  "date": "2026-06-27T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_cheese-toasties",
+  "servings": 4,
+  "cookedAt": "2026-06-27T12:25:00.000Z"
+ },
+ {
+  "id": "meal_00052",
+  "householdId": "household_demo",
+  "date": "2026-06-28T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 4,
+  "cookedAt": "2026-06-28T18:26:00.000Z"
+ },
+ {
+  "id": "meal_00053",
+  "householdId": "household_demo",
+  "date": "2026-06-28T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": "2026-06-28T07:22:00.000Z"
+ },
+ {
+  "id": "meal_00054",
+  "householdId": "household_demo",
+  "date": "2026-06-28T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_hummus-veggie-wraps",
+  "servings": 4,
+  "cookedAt": "2026-06-28T12:06:00.000Z"
+ },
+ {
+  "id": "meal_00055",
+  "householdId": "household_demo",
+  "date": "2026-06-28T00:00:00.000Z",
+  "mealType": "SNACK",
+  "recipeId": "recipe_ice-cream-sundae",
+  "servings": 4,
+  "cookedAt": "2026-06-28T20:00:00.000Z"
+ },
+ {
+  "id": "meal_00056",
+  "householdId": "household_demo",
+  "date": "2026-06-29T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": "2026-06-29T18:10:00.000Z"
+ },
+ {
+  "id": "meal_00057",
+  "householdId": "household_demo",
+  "date": "2026-06-30T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 4,
+  "cookedAt": "2026-06-30T18:37:00.000Z"
+ },
+ {
+  "id": "meal_00058",
+  "householdId": "household_demo",
+  "date": "2026-07-01T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_baked-salmon-with-broccoli-and-rice",
+  "servings": 4,
+  "cookedAt": "2026-07-01T18:53:00.000Z"
+ },
+ {
+  "id": "meal_00059",
+  "householdId": "household_demo",
+  "date": "2026-07-02T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_creamy-pesto-pasta",
+  "servings": 4,
+  "cookedAt": "2026-07-02T18:36:00.000Z"
+ },
+ {
+  "id": "meal_00060",
+  "householdId": "household_demo",
+  "date": "2026-07-03T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_frozen-pizza-night",
+  "servings": 4,
+  "cookedAt": "2026-07-03T18:49:00.000Z"
+ },
+ {
+  "id": "meal_00063",
+  "householdId": "household_demo",
+  "date": "2026-07-04T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 4,
+  "cookedAt": "2026-07-04T18:04:00.000Z"
+ },
+ {
+  "id": "meal_00064",
+  "householdId": "household_demo",
+  "date": "2026-07-04T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_pancakes",
+  "servings": 4,
+  "cookedAt": "2026-07-04T08:19:00.000Z"
+ },
+ {
+  "id": "meal_00065",
+  "householdId": "household_demo",
+  "date": "2026-07-04T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chickpea-salad",
+  "servings": 4,
+  "cookedAt": "2026-07-04T12:24:00.000Z"
+ },
+ {
+  "id": "meal_00066",
+  "householdId": "household_demo",
+  "date": "2026-07-05T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00067",
+  "householdId": "household_demo",
+  "date": "2026-07-05T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": "2026-07-05T07:36:00.000Z"
+ },
+ {
+  "id": "meal_00068",
+  "householdId": "household_demo",
+  "date": "2026-07-05T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_tomato-soup-and-toast",
+  "servings": 4,
+  "cookedAt": "2026-07-05T12:07:00.000Z"
+ },
+ {
+  "id": "meal_00069",
+  "householdId": "household_demo",
+  "date": "2026-07-05T00:00:00.000Z",
+  "mealType": "SNACK",
+  "recipeId": "recipe_ice-cream-sundae",
+  "servings": 4,
+  "cookedAt": "2026-07-05T20:00:00.000Z"
+ },
+ {
+  "id": "meal_00070",
+  "householdId": "household_demo",
+  "date": "2026-07-06T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 4,
+  "cookedAt": "2026-07-06T18:00:00.000Z"
+ },
+ {
+  "id": "meal_00071",
+  "householdId": "household_demo",
+  "date": "2026-07-07T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-stir-fry",
+  "servings": 4,
+  "cookedAt": "2026-07-07T18:28:00.000Z"
+ },
+ {
+  "id": "meal_00072",
+  "householdId": "household_demo",
+  "date": "2026-07-08T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_cod-with-sweet-potato-wedges",
+  "servings": 4,
+  "cookedAt": "2026-07-08T18:29:00.000Z"
+ },
+ {
+  "id": "meal_00073",
+  "householdId": "household_demo",
+  "date": "2026-07-09T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_homemade-pizza",
+  "servings": 4,
+  "cookedAt": "2026-07-09T18:35:00.000Z"
+ },
+ {
+  "id": "meal_00074",
+  "householdId": "household_demo",
+  "date": "2026-07-10T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_garlic-prawn-linguine",
+  "servings": 4,
+  "cookedAt": "2026-07-10T18:44:00.000Z"
+ },
+ {
+  "id": "meal_00075",
+  "householdId": "household_demo",
+  "date": "2026-07-11T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_baked-salmon-with-broccoli-and-rice",
+  "servings": 4,
+  "cookedAt": "2026-07-11T18:09:00.000Z"
+ },
+ {
+  "id": "meal_00076",
+  "householdId": "household_demo",
+  "date": "2026-07-11T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_pancakes",
+  "servings": 4,
+  "cookedAt": "2026-07-11T07:58:00.000Z"
+ },
+ {
+  "id": "meal_00077",
+  "householdId": "household_demo",
+  "date": "2026-07-11T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chickpea-salad",
+  "servings": 4,
+  "cookedAt": "2026-07-11T12:44:00.000Z"
+ },
+ {
+  "id": "meal_00078",
+  "householdId": "household_demo",
+  "date": "2026-07-12T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 4,
+  "cookedAt": "2026-07-12T18:20:00.000Z"
+ },
+ {
+  "id": "meal_00079",
+  "householdId": "household_demo",
+  "date": "2026-07-12T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_pancakes",
+  "servings": 4,
+  "cookedAt": "2026-07-12T07:47:00.000Z"
+ },
+ {
+  "id": "meal_00080",
+  "householdId": "household_demo",
+  "date": "2026-07-12T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chicken-caesar-wraps",
+  "servings": 4,
+  "cookedAt": "2026-07-12T12:11:00.000Z"
+ },
+ {
+  "id": "meal_00081",
+  "householdId": "household_demo",
+  "date": "2026-07-12T00:00:00.000Z",
+  "mealType": "SNACK",
+  "recipeId": "recipe_ice-cream-sundae",
+  "servings": 4,
+  "cookedAt": "2026-07-12T20:00:00.000Z"
+ },
+ {
+  "id": "meal_00082",
+  "householdId": "household_demo",
+  "date": "2026-07-13T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 4,
+  "cookedAt": "2026-07-13T18:40:00.000Z"
+ },
+ {
+  "id": "meal_00083",
+  "householdId": "household_demo",
+  "date": "2026-07-14T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_tofu-and-veg-curry",
+  "servings": 4,
+  "cookedAt": "2026-07-14T18:04:00.000Z"
+ },
+ {
+  "id": "meal_00084",
+  "householdId": "household_demo",
+  "date": "2026-07-15T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": "2026-07-15T18:39:00.000Z"
+ },
+ {
+  "id": "meal_00085",
+  "householdId": "household_demo",
+  "date": "2026-07-16T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_creamy-pesto-pasta",
+  "servings": 4,
+  "cookedAt": "2026-07-16T18:37:00.000Z"
+ },
+ {
+  "id": "meal_00086",
+  "householdId": "household_demo",
+  "date": "2026-07-17T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_frozen-pizza-night",
+  "servings": 4,
+  "cookedAt": "2026-07-17T18:15:00.000Z"
+ },
+ {
+  "id": "meal_00087",
+  "householdId": "household_demo",
+  "date": "2026-07-18T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_baked-salmon-with-broccoli-and-rice",
+  "servings": 4,
+  "cookedAt": "2026-07-18T18:52:00.000Z"
+ },
+ {
+  "id": "meal_00088",
+  "householdId": "household_demo",
+  "date": "2026-07-18T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00089",
+  "householdId": "household_demo",
+  "date": "2026-07-18T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_cheese-toasties",
+  "servings": 4,
+  "cookedAt": "2026-07-18T12:29:00.000Z"
+ },
+ {
+  "id": "meal_00090",
+  "householdId": "household_demo",
+  "date": "2026-07-19T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_garlic-prawn-linguine",
+  "servings": 4,
+  "cookedAt": "2026-07-19T18:29:00.000Z"
+ },
+ {
+  "id": "meal_00091",
+  "householdId": "household_demo",
+  "date": "2026-07-19T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_full-cooked-breakfast",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00092",
+  "householdId": "household_demo",
+  "date": "2026-07-19T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chickpea-salad",
+  "servings": 4,
+  "cookedAt": "2026-07-19T12:21:00.000Z"
+ },
+ {
+  "id": "meal_00093",
+  "householdId": "household_demo",
+  "date": "2026-07-20T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_sausage-and-mash",
+  "servings": 4,
+  "cookedAt": "2026-07-20T18:45:00.000Z"
+ },
+ {
+  "id": "meal_00094",
+  "householdId": "household_demo",
+  "date": "2026-07-21T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 4,
+  "cookedAt": "2026-07-21T18:33:00.000Z"
+ },
+ {
+  "id": "meal_00095",
+  "householdId": "household_demo",
+  "date": "2026-07-22T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 4,
+  "cookedAt": "2026-07-22T18:05:00.000Z"
+ },
+ {
+  "id": "meal_00096",
+  "householdId": "household_demo",
+  "date": "2026-07-23T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-stir-fry",
+  "servings": 4,
+  "cookedAt": "2026-07-23T18:14:00.000Z"
+ },
+ {
+  "id": "meal_00097",
+  "householdId": "household_demo",
+  "date": "2026-07-24T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_homemade-pizza",
+  "servings": 4,
+  "cookedAt": "2026-07-24T18:04:00.000Z"
+ },
+ {
+  "id": "meal_00098",
+  "householdId": "household_demo",
+  "date": "2026-07-25T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_baked-salmon-with-broccoli-and-rice",
+  "servings": 4,
+  "cookedAt": "2026-07-25T18:17:00.000Z"
+ },
+ {
+  "id": "meal_00099",
+  "householdId": "household_demo",
+  "date": "2026-07-25T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_full-cooked-breakfast",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00100",
+  "householdId": "household_demo",
+  "date": "2026-07-25T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_tomato-soup-and-toast",
+  "servings": 4,
+  "cookedAt": "2026-07-25T12:02:00.000Z"
+ },
+ {
+  "id": "meal_00101",
+  "householdId": "household_demo",
+  "date": "2026-07-26T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_roast-chicken-thighs-and-veg",
+  "servings": 4,
+  "cookedAt": "2026-07-26T18:04:00.000Z"
+ },
+ {
+  "id": "meal_00102",
+  "householdId": "household_demo",
+  "date": "2026-07-26T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_full-cooked-breakfast",
+  "servings": 4,
+  "cookedAt": "2026-07-26T08:24:00.000Z"
+ },
+ {
+  "id": "meal_00103",
+  "householdId": "household_demo",
+  "date": "2026-07-26T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_hummus-veggie-wraps",
+  "servings": 4,
+  "cookedAt": "2026-07-26T12:35:00.000Z"
+ },
+ {
+  "id": "meal_00104",
+  "householdId": "household_demo",
+  "date": "2026-07-26T00:00:00.000Z",
+  "mealType": "SNACK",
+  "recipeId": "recipe_ice-cream-sundae",
+  "servings": 4,
+  "cookedAt": "2026-07-26T20:00:00.000Z"
+ },
+ {
+  "id": "meal_00105",
+  "householdId": "household_demo",
+  "date": "2026-07-27T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 4,
+  "cookedAt": "2026-07-27T18:52:00.000Z"
+ },
+ {
+  "id": "meal_00106",
+  "householdId": "household_demo",
+  "date": "2026-07-28T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_frozen-pizza-night",
+  "servings": 4,
+  "cookedAt": "2026-07-28T18:10:00.000Z"
+ },
+ {
+  "id": "meal_00107",
+  "householdId": "household_demo",
+  "date": "2026-07-29T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": "2026-07-29T18:09:00.000Z"
+ },
+ {
+  "id": "meal_00108",
+  "householdId": "household_demo",
+  "date": "2026-07-30T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_garlic-prawn-linguine",
+  "servings": 4,
+  "cookedAt": "2026-07-30T18:59:00.000Z"
+ },
+ {
+  "id": "meal_00109",
+  "householdId": "household_demo",
+  "date": "2026-07-31T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_cod-with-sweet-potato-wedges",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00122",
+  "householdId": "household_demo",
+  "date": "2026-07-31T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 5,
+  "cookedAt": "2026-07-31T18:05:00.000Z"
+ },
+ {
+  "id": "meal_00110",
+  "householdId": "household_demo",
+  "date": "2026-08-01T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 4,
+  "cookedAt": "2026-08-01T18:29:00.000Z"
+ },
+ {
+  "id": "meal_00111",
+  "householdId": "household_demo",
+  "date": "2026-08-01T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00112",
+  "householdId": "household_demo",
+  "date": "2026-08-01T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_tomato-soup-and-toast",
+  "servings": 4,
+  "cookedAt": "2026-08-01T12:27:00.000Z"
+ },
+ {
+  "id": "meal_00113",
+  "householdId": "household_demo",
+  "date": "2026-08-02T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_sausage-and-mash",
+  "servings": 4,
+  "cookedAt": "2026-08-02T18:33:00.000Z"
+ },
+ {
+  "id": "meal_00114",
+  "householdId": "household_demo",
+  "date": "2026-08-02T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_pancakes",
+  "servings": 4,
+  "cookedAt": "2026-08-02T07:49:00.000Z"
+ },
+ {
+  "id": "meal_00115",
+  "householdId": "household_demo",
+  "date": "2026-08-02T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chickpea-salad",
+  "servings": 4,
+  "cookedAt": "2026-08-02T12:13:00.000Z"
+ },
+ {
+  "id": "meal_00116",
+  "householdId": "household_demo",
+  "date": "2026-08-02T00:00:00.000Z",
+  "mealType": "SNACK",
+  "recipeId": "recipe_ice-cream-sundae",
+  "servings": 4,
+  "cookedAt": "2026-08-02T20:00:00.000Z"
+ },
+ {
+  "id": "meal_00117",
+  "householdId": "household_demo",
+  "date": "2026-08-03T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_creamy-pesto-pasta",
+  "servings": 4,
+  "cookedAt": "2026-08-03T18:51:00.000Z"
+ },
+ {
+  "id": "meal_00118",
+  "householdId": "household_demo",
+  "date": "2026-08-04T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 4,
+  "cookedAt": "2026-08-04T18:29:00.000Z"
+ },
+ {
+  "id": "meal_00119",
+  "householdId": "household_demo",
+  "date": "2026-08-05T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-stir-fry",
+  "servings": 4,
+  "cookedAt": "2026-08-05T18:18:00.000Z"
+ },
+ {
+  "id": "meal_00120",
+  "householdId": "household_demo",
+  "date": "2026-08-06T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_baked-salmon-with-broccoli-and-rice",
+  "servings": 4,
+  "cookedAt": "2026-08-06T18:55:00.000Z"
+ },
+ {
+  "id": "meal_00121",
+  "householdId": "household_demo",
+  "date": "2026-08-07T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_frozen-pizza-night",
+  "servings": 4,
+  "cookedAt": "2026-08-07T18:21:00.000Z"
+ },
+ {
+  "id": "meal_00123",
+  "householdId": "household_demo",
+  "date": "2026-08-08T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_sausage-and-mash",
+  "servings": 4,
+  "cookedAt": "2026-08-08T18:13:00.000Z"
+ },
+ {
+  "id": "meal_00124",
+  "householdId": "household_demo",
+  "date": "2026-08-08T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_full-cooked-breakfast",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00125",
+  "householdId": "household_demo",
+  "date": "2026-08-08T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_tomato-soup-and-toast",
+  "servings": 4,
+  "cookedAt": "2026-08-08T12:30:00.000Z"
+ },
+ {
+  "id": "meal_00126",
+  "householdId": "household_demo",
+  "date": "2026-08-09T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 4,
+  "cookedAt": "2026-08-09T18:21:00.000Z"
+ },
+ {
+  "id": "meal_00127",
+  "householdId": "household_demo",
+  "date": "2026-08-09T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": "2026-08-09T07:24:00.000Z"
+ },
+ {
+  "id": "meal_00128",
+  "householdId": "household_demo",
+  "date": "2026-08-09T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chickpea-salad",
+  "servings": 4,
+  "cookedAt": "2026-08-09T12:25:00.000Z"
+ },
+ {
+  "id": "meal_00129",
+  "householdId": "household_demo",
+  "date": "2026-08-10T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_garlic-prawn-linguine",
+  "servings": 4,
+  "cookedAt": "2026-08-10T18:19:00.000Z"
+ },
+ {
+  "id": "meal_00130",
+  "householdId": "household_demo",
+  "date": "2026-08-11T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_cod-with-sweet-potato-wedges",
+  "servings": 4,
+  "cookedAt": "2026-08-11T18:48:00.000Z"
+ },
+ {
+  "id": "meal_00131",
+  "householdId": "household_demo",
+  "date": "2026-08-12T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 4,
+  "cookedAt": "2026-08-12T18:15:00.000Z"
+ },
+ {
+  "id": "meal_00132",
+  "householdId": "household_demo",
+  "date": "2026-08-13T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_homemade-pizza",
+  "servings": 4,
+  "cookedAt": "2026-08-13T18:49:00.000Z"
+ },
+ {
+  "id": "meal_00133",
+  "householdId": "household_demo",
+  "date": "2026-08-14T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": "2026-08-14T18:34:00.000Z"
+ },
+ {
+  "id": "meal_00134",
+  "householdId": "household_demo",
+  "date": "2026-08-15T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_garlic-prawn-linguine",
+  "servings": 4,
+  "cookedAt": "2026-08-15T18:39:00.000Z"
+ },
+ {
+  "id": "meal_00135",
+  "householdId": "household_demo",
+  "date": "2026-08-15T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": "2026-08-15T07:48:00.000Z"
+ },
+ {
+  "id": "meal_00136",
+  "householdId": "household_demo",
+  "date": "2026-08-15T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chicken-caesar-wraps",
+  "servings": 4,
+  "cookedAt": "2026-08-15T12:20:00.000Z"
+ },
+ {
+  "id": "meal_00137",
+  "householdId": "household_demo",
+  "date": "2026-08-16T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-stir-fry",
+  "servings": 4,
+  "cookedAt": "2026-08-16T18:30:00.000Z"
+ },
+ {
+  "id": "meal_00138",
+  "householdId": "household_demo",
+  "date": "2026-08-16T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": "2026-08-16T07:29:00.000Z"
+ },
+ {
+  "id": "meal_00139",
+  "householdId": "household_demo",
+  "date": "2026-08-16T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_hummus-veggie-wraps",
+  "servings": 4,
+  "cookedAt": "2026-08-16T12:37:00.000Z"
+ },
+ {
+  "id": "meal_00140",
+  "householdId": "household_demo",
+  "date": "2026-08-16T00:00:00.000Z",
+  "mealType": "SNACK",
+  "recipeId": "recipe_ice-cream-sundae",
+  "servings": 4,
+  "cookedAt": "2026-08-16T20:00:00.000Z"
+ },
+ {
+  "id": "meal_00141",
+  "householdId": "household_demo",
+  "date": "2026-08-17T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_baked-salmon-with-broccoli-and-rice",
+  "servings": 4,
+  "cookedAt": "2026-08-17T18:54:00.000Z"
+ },
+ {
+  "id": "meal_00142",
+  "householdId": "household_demo",
+  "date": "2026-08-18T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_sausage-and-mash",
+  "servings": 4,
+  "cookedAt": "2026-08-18T18:19:00.000Z"
+ },
+ {
+  "id": "meal_00143",
+  "householdId": "household_demo",
+  "date": "2026-08-19T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 4,
+  "cookedAt": "2026-08-19T18:24:00.000Z"
+ },
+ {
+  "id": "meal_00144",
+  "householdId": "household_demo",
+  "date": "2026-08-20T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_frozen-pizza-night",
+  "servings": 4,
+  "cookedAt": "2026-08-20T18:31:00.000Z"
+ },
+ {
+  "id": "meal_00145",
+  "householdId": "household_demo",
+  "date": "2026-08-21T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_cod-with-sweet-potato-wedges",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00146",
+  "householdId": "household_demo",
+  "date": "2026-08-22T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_baked-salmon-with-broccoli-and-rice",
+  "servings": 4,
+  "cookedAt": "2026-08-22T18:33:00.000Z"
+ },
+ {
+  "id": "meal_00147",
+  "householdId": "household_demo",
+  "date": "2026-08-22T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": "2026-08-22T08:05:00.000Z"
+ },
+ {
+  "id": "meal_00148",
+  "householdId": "household_demo",
+  "date": "2026-08-22T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_hummus-veggie-wraps",
+  "servings": 4,
+  "cookedAt": "2026-08-22T12:40:00.000Z"
+ },
+ {
+  "id": "meal_00149",
+  "householdId": "household_demo",
+  "date": "2026-08-23T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_roast-chicken-thighs-and-veg",
+  "servings": 4,
+  "cookedAt": "2026-08-23T18:19:00.000Z"
+ },
+ {
+  "id": "meal_00150",
+  "householdId": "household_demo",
+  "date": "2026-08-23T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": "2026-08-23T07:25:00.000Z"
+ },
+ {
+  "id": "meal_00151",
+  "householdId": "household_demo",
+  "date": "2026-08-23T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_hummus-veggie-wraps",
+  "servings": 4,
+  "cookedAt": "2026-08-23T12:09:00.000Z"
+ },
+ {
+  "id": "meal_00152",
+  "householdId": "household_demo",
+  "date": "2026-08-24T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_homemade-pizza",
+  "servings": 4,
+  "cookedAt": "2026-08-24T18:25:00.000Z"
+ },
+ {
+  "id": "meal_00153",
+  "householdId": "household_demo",
+  "date": "2026-08-25T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-stir-fry",
+  "servings": 4,
+  "cookedAt": "2026-08-25T18:11:00.000Z"
+ },
+ {
+  "id": "meal_00154",
+  "householdId": "household_demo",
+  "date": "2026-08-26T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_garlic-prawn-linguine",
+  "servings": 4,
+  "cookedAt": "2026-08-26T18:03:00.000Z"
+ },
+ {
+  "id": "meal_00155",
+  "householdId": "household_demo",
+  "date": "2026-08-27T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_tofu-and-veg-curry",
+  "servings": 4,
+  "cookedAt": "2026-08-27T18:11:00.000Z"
+ },
+ {
+  "id": "meal_00156",
+  "householdId": "household_demo",
+  "date": "2026-08-28T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00157",
+  "householdId": "household_demo",
+  "date": "2026-08-29T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 4,
+  "cookedAt": "2026-08-29T18:44:00.000Z"
+ },
+ {
+  "id": "meal_00158",
+  "householdId": "household_demo",
+  "date": "2026-08-29T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": "2026-08-29T08:18:00.000Z"
+ },
+ {
+  "id": "meal_00159",
+  "householdId": "household_demo",
+  "date": "2026-08-29T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_tomato-soup-and-toast",
+  "servings": 4,
+  "cookedAt": "2026-08-29T12:08:00.000Z"
+ },
+ {
+  "id": "meal_00160",
+  "householdId": "household_demo",
+  "date": "2026-08-30T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_cod-with-sweet-potato-wedges",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00161",
+  "householdId": "household_demo",
+  "date": "2026-08-30T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_pancakes",
+  "servings": 4,
+  "cookedAt": "2026-08-30T08:02:00.000Z"
+ },
+ {
+  "id": "meal_00162",
+  "householdId": "household_demo",
+  "date": "2026-08-30T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_hummus-veggie-wraps",
+  "servings": 4,
+  "cookedAt": "2026-08-30T12:34:00.000Z"
+ },
+ {
+  "id": "meal_00179",
+  "householdId": "household_demo",
+  "date": "2026-08-30T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 5,
+  "cookedAt": "2026-08-30T18:43:00.000Z"
+ },
+ {
+  "id": "meal_00163",
+  "householdId": "household_demo",
+  "date": "2026-08-31T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_frozen-pizza-night",
+  "servings": 4,
+  "cookedAt": "2026-08-31T18:49:00.000Z"
+ },
+ {
+  "id": "meal_00164",
+  "householdId": "household_demo",
+  "date": "2026-09-01T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 4,
+  "cookedAt": "2026-09-01T18:54:00.000Z"
+ },
+ {
+  "id": "meal_00165",
+  "householdId": "household_demo",
+  "date": "2026-09-02T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-stir-fry",
+  "servings": 4,
+  "cookedAt": "2026-09-02T18:23:00.000Z"
+ },
+ {
+  "id": "meal_00166",
+  "householdId": "household_demo",
+  "date": "2026-09-03T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_creamy-pesto-pasta",
+  "servings": 4,
+  "cookedAt": "2026-09-03T18:36:00.000Z"
+ },
+ {
+  "id": "meal_00167",
+  "householdId": "household_demo",
+  "date": "2026-09-04T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_baked-salmon-with-broccoli-and-rice",
+  "servings": 4,
+  "cookedAt": "2026-09-04T18:16:00.000Z"
+ },
+ {
+  "id": "meal_00168",
+  "householdId": "household_demo",
+  "date": "2026-09-05T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_homemade-pizza",
+  "servings": 4,
+  "cookedAt": "2026-09-05T18:36:00.000Z"
+ },
+ {
+  "id": "meal_00169",
+  "householdId": "household_demo",
+  "date": "2026-09-05T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_pancakes",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00170",
+  "householdId": "household_demo",
+  "date": "2026-09-05T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chicken-caesar-wraps",
+  "servings": 4,
+  "cookedAt": "2026-09-05T12:40:00.000Z"
+ },
+ {
+  "id": "meal_00171",
+  "householdId": "household_demo",
+  "date": "2026-09-06T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_cod-with-sweet-potato-wedges",
+  "servings": 4,
+  "cookedAt": "2026-09-06T18:51:00.000Z"
+ },
+ {
+  "id": "meal_00172",
+  "householdId": "household_demo",
+  "date": "2026-09-06T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_pancakes",
+  "servings": 4,
+  "cookedAt": "2026-09-06T07:42:00.000Z"
+ },
+ {
+  "id": "meal_00173",
+  "householdId": "household_demo",
+  "date": "2026-09-06T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chickpea-salad",
+  "servings": 4,
+  "cookedAt": "2026-09-06T12:11:00.000Z"
+ },
+ {
+  "id": "meal_00174",
+  "householdId": "household_demo",
+  "date": "2026-09-07T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00175",
+  "householdId": "household_demo",
+  "date": "2026-09-08T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": "2026-09-08T18:24:00.000Z"
+ },
+ {
+  "id": "meal_00176",
+  "householdId": "household_demo",
+  "date": "2026-09-09T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 4,
+  "cookedAt": "2026-09-09T18:49:00.000Z"
+ },
+ {
+  "id": "meal_00177",
+  "householdId": "household_demo",
+  "date": "2026-09-10T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_frozen-pizza-night",
+  "servings": 4,
+  "cookedAt": "2026-09-10T18:20:00.000Z"
+ },
+ {
+  "id": "meal_00178",
+  "householdId": "household_demo",
+  "date": "2026-09-11T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_sausage-and-mash",
+  "servings": 4,
+  "cookedAt": "2026-09-11T18:13:00.000Z"
+ },
+ {
+  "id": "meal_00180",
+  "householdId": "household_demo",
+  "date": "2026-09-12T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_cod-with-sweet-potato-wedges",
+  "servings": 4,
+  "cookedAt": "2026-09-12T18:06:00.000Z"
+ },
+ {
+  "id": "meal_00181",
+  "householdId": "household_demo",
+  "date": "2026-09-12T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_scrambled-eggs-on-toast",
+  "servings": 4,
+  "cookedAt": "2026-09-12T07:15:00.000Z"
+ },
+ {
+  "id": "meal_00182",
+  "householdId": "household_demo",
+  "date": "2026-09-12T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_cheese-toasties",
+  "servings": 4,
+  "cookedAt": "2026-09-12T12:26:00.000Z"
+ },
+ {
+  "id": "meal_00183",
+  "householdId": "household_demo",
+  "date": "2026-09-13T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": "2026-09-13T18:02:00.000Z"
+ },
+ {
+  "id": "meal_00184",
+  "householdId": "household_demo",
+  "date": "2026-09-13T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_full-cooked-breakfast",
+  "servings": 4,
+  "cookedAt": "2026-09-13T07:35:00.000Z"
+ },
+ {
+  "id": "meal_00185",
+  "householdId": "household_demo",
+  "date": "2026-09-13T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_hummus-veggie-wraps",
+  "servings": 4,
+  "cookedAt": "2026-09-13T12:33:00.000Z"
+ },
+ {
+  "id": "meal_00186",
+  "householdId": "household_demo",
+  "date": "2026-09-13T00:00:00.000Z",
+  "mealType": "SNACK",
+  "recipeId": "recipe_ice-cream-sundae",
+  "servings": 4,
+  "cookedAt": "2026-09-13T20:00:00.000Z"
+ },
+ {
+  "id": "meal_00187",
+  "householdId": "household_demo",
+  "date": "2026-09-14T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_homemade-pizza",
+  "servings": 4,
+  "cookedAt": "2026-09-14T18:27:00.000Z"
+ },
+ {
+  "id": "meal_00188",
+  "householdId": "household_demo",
+  "date": "2026-09-15T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_garlic-prawn-linguine",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00204",
+  "householdId": "household_demo",
+  "date": "2026-09-15T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_cod-with-sweet-potato-wedges",
+  "servings": 5,
+  "cookedAt": "2026-09-15T18:53:00.000Z"
+ },
+ {
+  "id": "meal_00189",
+  "householdId": "household_demo",
+  "date": "2026-09-16T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_baked-salmon-with-broccoli-and-rice",
+  "servings": 4,
+  "cookedAt": "2026-09-16T18:25:00.000Z"
+ },
+ {
+  "id": "meal_00190",
+  "householdId": "household_demo",
+  "date": "2026-09-17T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_tofu-and-veg-curry",
+  "servings": 4,
+  "cookedAt": "2026-09-17T18:05:00.000Z"
+ },
+ {
+  "id": "meal_00191",
+  "householdId": "household_demo",
+  "date": "2026-09-18T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_creamy-pesto-pasta",
+  "servings": 4,
+  "cookedAt": "2026-09-18T18:54:00.000Z"
+ },
+ {
+  "id": "meal_00192",
+  "householdId": "household_demo",
+  "date": "2026-09-19T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 4,
+  "cookedAt": "2026-09-19T18:33:00.000Z"
+ },
+ {
+  "id": "meal_00193",
+  "householdId": "household_demo",
+  "date": "2026-09-19T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_full-cooked-breakfast",
+  "servings": 4,
+  "cookedAt": "2026-09-19T07:00:00.000Z"
+ },
+ {
+  "id": "meal_00194",
+  "householdId": "household_demo",
+  "date": "2026-09-19T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_cheese-toasties",
+  "servings": 4,
+  "cookedAt": "2026-09-19T12:34:00.000Z"
+ },
+ {
+  "id": "meal_00195",
+  "householdId": "household_demo",
+  "date": "2026-09-20T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_roast-chicken-thighs-and-veg",
+  "servings": 4,
+  "cookedAt": "2026-09-20T18:30:00.000Z"
+ },
+ {
+  "id": "meal_00196",
+  "householdId": "household_demo",
+  "date": "2026-09-20T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_pancakes",
+  "servings": 4,
+  "cookedAt": "2026-09-20T08:21:00.000Z"
+ },
+ {
+  "id": "meal_00197",
+  "householdId": "household_demo",
+  "date": "2026-09-20T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_hummus-veggie-wraps",
+  "servings": 4,
+  "cookedAt": "2026-09-20T12:42:00.000Z"
+ },
+ {
+  "id": "meal_00198",
+  "householdId": "household_demo",
+  "date": "2026-09-20T00:00:00.000Z",
+  "mealType": "SNACK",
+  "recipeId": "recipe_ice-cream-sundae",
+  "servings": 4,
+  "cookedAt": "2026-09-20T20:00:00.000Z"
+ },
+ {
+  "id": "meal_00199",
+  "householdId": "household_demo",
+  "date": "2026-09-21T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": "2026-09-21T18:53:00.000Z"
+ },
+ {
+  "id": "meal_00200",
+  "householdId": "household_demo",
+  "date": "2026-09-22T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_frozen-pizza-night",
+  "servings": 4,
+  "cookedAt": "2026-09-22T18:28:00.000Z"
+ },
+ {
+  "id": "meal_00201",
+  "householdId": "household_demo",
+  "date": "2026-09-23T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_homemade-pizza",
+  "servings": 4,
+  "cookedAt": "2026-09-23T18:42:00.000Z"
+ },
+ {
+  "id": "meal_00202",
+  "householdId": "household_demo",
+  "date": "2026-09-24T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_cod-with-sweet-potato-wedges",
+  "servings": 4,
+  "cookedAt": "2026-09-24T18:33:00.000Z"
+ },
+ {
+  "id": "meal_00203",
+  "householdId": "household_demo",
+  "date": "2026-09-25T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 4,
+  "cookedAt": "2026-09-25T18:38:00.000Z"
+ },
+ {
+  "id": "meal_00205",
+  "householdId": "household_demo",
+  "date": "2026-09-26T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_garlic-prawn-linguine",
+  "servings": 4,
+  "cookedAt": "2026-09-26T18:17:00.000Z"
+ },
+ {
+  "id": "meal_00206",
+  "householdId": "household_demo",
+  "date": "2026-09-26T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_pancakes",
+  "servings": 4,
+  "cookedAt": "2026-09-26T07:18:00.000Z"
+ },
+ {
+  "id": "meal_00207",
+  "householdId": "household_demo",
+  "date": "2026-09-26T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chicken-caesar-wraps",
+  "servings": 4,
+  "cookedAt": "2026-09-26T12:10:00.000Z"
+ },
+ {
+  "id": "meal_00208",
+  "householdId": "household_demo",
+  "date": "2026-09-27T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chilli-con-carne",
+  "servings": 4,
+  "cookedAt": "2026-09-27T18:38:00.000Z"
+ },
+ {
+  "id": "meal_00209",
+  "householdId": "household_demo",
+  "date": "2026-09-27T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_full-cooked-breakfast",
+  "servings": 4,
+  "cookedAt": "2026-09-27T07:43:00.000Z"
+ },
+ {
+  "id": "meal_00210",
+  "householdId": "household_demo",
+  "date": "2026-09-27T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_chicken-caesar-wraps",
+  "servings": 4,
+  "cookedAt": "2026-09-27T12:03:00.000Z"
+ },
+ {
+  "id": "meal_00211",
+  "householdId": "household_demo",
+  "date": "2026-09-28T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_roast-chicken-thighs-and-veg",
+  "servings": 4,
+  "cookedAt": "2026-09-28T18:16:00.000Z"
+ },
+ {
+  "id": "meal_00212",
+  "householdId": "household_demo",
+  "date": "2026-09-29T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_frozen-pizza-night",
+  "servings": 4,
+  "cookedAt": "2026-09-29T18:55:00.000Z"
+ },
+ {
+  "id": "meal_00213",
+  "householdId": "household_demo",
+  "date": "2026-09-30T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-stir-fry",
+  "servings": 4,
+  "cookedAt": "2026-09-30T18:02:00.000Z"
+ },
+ {
+  "id": "meal_00214",
+  "householdId": "household_demo",
+  "date": "2026-10-01T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_creamy-pesto-pasta",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00215",
+  "householdId": "household_demo",
+  "date": "2026-10-02T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_tofu-and-veg-curry",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00216",
+  "householdId": "household_demo",
+  "date": "2026-10-03T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_sausage-and-mash",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00217",
+  "householdId": "household_demo",
+  "date": "2026-10-03T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_pancakes",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00218",
+  "householdId": "household_demo",
+  "date": "2026-10-03T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_hummus-veggie-wraps",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00219",
+  "householdId": "household_demo",
+  "date": "2026-10-04T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_garlic-prawn-linguine",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00220",
+  "householdId": "household_demo",
+  "date": "2026-10-04T00:00:00.000Z",
+  "mealType": "BREAKFAST",
+  "recipeId": "recipe_full-cooked-breakfast",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00221",
+  "householdId": "household_demo",
+  "date": "2026-10-04T00:00:00.000Z",
+  "mealType": "LUNCH",
+  "recipeId": "recipe_tomato-soup-and-toast",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00222",
+  "householdId": "household_demo",
+  "date": "2026-10-04T00:00:00.000Z",
+  "mealType": "SNACK",
+  "recipeId": "recipe_ice-cream-sundae",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00223",
+  "householdId": "household_demo",
+  "date": "2026-10-05T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_homemade-pizza",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00224",
+  "householdId": "household_demo",
+  "date": "2026-10-06T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_frozen-pizza-night",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00225",
+  "householdId": "household_demo",
+  "date": "2026-10-07T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_chicken-nuggets-and-chips",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00226",
+  "householdId": "household_demo",
+  "date": "2026-10-08T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_spaghetti-bolognese",
+  "servings": 4,
+  "cookedAt": null
+ },
+ {
+  "id": "meal_00227",
+  "householdId": "household_demo",
+  "date": "2026-10-09T00:00:00.000Z",
+  "mealType": "DINNER",
+  "recipeId": "recipe_baked-salmon-with-broccoli-and-rice",
+  "servings": 4,
+  "cookedAt": null
+ }
+]

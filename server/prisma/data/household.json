@@ -1,0 +1,538 @@
+{
+  "household": {
+    "name": "The Demo Family",
+    "inviteCode": "DEMO-FRIDGE-2026",
+    "groceryDayPreference": 6,
+    "runThresholdDays": 2
+  },
+  "defaultPassword": "demo1234",
+  "members": [
+    {
+      "key": "alex",
+      "name": "Alex",
+      "email": "alex@demo.family",
+      "role": "ADMIN",
+      "birthYear": 1986,
+      "sex": "F",
+      "heightCm": 168,
+      "weightKg": 61,
+      "activityLevel": "ACTIVE",
+      "dietaryGoals": "Lower cholesterol; eat more oily fish and fibre",
+      "allergies": null,
+      "dietType": "OMNIVORE",
+      "favourites": {
+        "recipes": [
+          "Baked Salmon with Broccoli & Rice",
+          "Chickpea Salad",
+          "Yogurt Parfait",
+          "Cod with Sweet Potato Wedges"
+        ],
+        "foods": [
+          "Greek Yogurt",
+          "Blueberries",
+          "Avocados",
+          "Sparkling Water"
+        ]
+      },
+      "habits": {
+        "portion": 1.0,
+        "breakfastSkipProb": 0.05,
+        "weekdayLunch": {
+          "packedProb": 0.7,
+          "packedRecipes": [
+            "Chickpea Salad",
+            "Hummus Veggie Wraps"
+          ],
+          "outText": [
+            "Salad bar near office",
+            "Sushi lunch"
+          ]
+        },
+        "dinnerOutProb": 0.05,
+        "snacks": [
+          {
+            "food": "Apples",
+            "qty": 1,
+            "prob": 0.6
+          },
+          {
+            "food": "Mixed Nuts",
+            "qty": 30,
+            "prob": 0.4
+          },
+          {
+            "food": "Greek Yogurt",
+            "qty": 150,
+            "prob": 0.3
+          },
+          {
+            "food": "Rice Cakes",
+            "qty": 20,
+            "prob": 0.2
+          },
+          {
+            "food": "Chocolate Bar",
+            "qty": 20,
+            "prob": 0.08
+          }
+        ],
+        "drinks": [
+          {
+            "food": "Sparkling Water",
+            "qty": 750,
+            "prob": 0.9
+          },
+          {
+            "food": "Coffee Beans",
+            "qty": 15,
+            "prob": 0.95
+          },
+          {
+            "food": "Oat Milk",
+            "qty": 150,
+            "prob": 0.8
+          },
+          {
+            "food": "White Wine",
+            "qty": 150,
+            "prob": 0.12,
+            "weekendBoost": 2
+          }
+        ],
+        "breakfasts": [
+          {
+            "recipe": "Yogurt Parfait",
+            "weight": 4
+          },
+          {
+            "recipe": "Porridge with Berries",
+            "weight": 4
+          },
+          {
+            "food": "Avocados",
+            "qty": 1,
+            "withBread": true,
+            "weight": 2
+          }
+        ]
+      }
+    },
+    {
+      "key": "sam",
+      "name": "Sam",
+      "email": "sam@demo.family",
+      "role": "ADMIN",
+      "birthYear": 1988,
+      "sex": "M",
+      "heightCm": 180,
+      "weightKg": 94,
+      "activityLevel": "SEDENTARY",
+      "dietaryGoals": "Lose 8 kg; cut down on late-night snacking",
+      "allergies": null,
+      "dietType": "OMNIVORE",
+      "favourites": {
+        "recipes": [
+          "Creamy Pesto Pasta",
+          "Spaghetti Bolognese",
+          "Full Cooked Breakfast",
+          "Homemade Pizza",
+          "Chilli con Carne"
+        ],
+        "foods": [
+          "Cheddar Cheese",
+          "Potato Crisps",
+          "Beer",
+          "Croissants"
+        ]
+      },
+      "habits": {
+        "portion": 1.25,
+        "breakfastSkipProb": 0.35,
+        "weekdayLunch": {
+          "packedProb": 0.3,
+          "packedRecipes": [
+            "Ham & Cheese Sandwiches",
+            "Cheese Toasties"
+          ],
+          "outText": [
+            "Burger and fries",
+            "Meal deal sandwich + crisps",
+            "Kebab",
+            "Fried chicken"
+          ]
+        },
+        "dinnerOutProb": 0.08,
+        "snacks": [
+          {
+            "food": "Potato Crisps",
+            "qty": 50,
+            "prob": 0.55,
+            "lateNight": true
+          },
+          {
+            "food": "Cheddar Cheese",
+            "qty": 40,
+            "prob": 0.45,
+            "lateNight": true
+          },
+          {
+            "food": "Biscuits",
+            "qty": 60,
+            "prob": 0.4,
+            "lateNight": true
+          },
+          {
+            "food": "Chocolate Bar",
+            "qty": 50,
+            "prob": 0.3,
+            "lateNight": true
+          },
+          {
+            "food": "Vanilla Ice Cream",
+            "qty": 200,
+            "prob": 0.15,
+            "lateNight": true
+          },
+          {
+            "food": "Bananas",
+            "qty": 1,
+            "prob": 0.15
+          }
+        ],
+        "drinks": [
+          {
+            "food": "Coffee Beans",
+            "qty": 25,
+            "prob": 0.95
+          },
+          {
+            "food": "Whole Milk",
+            "qty": 200,
+            "prob": 0.9
+          },
+          {
+            "food": "Cola",
+            "qty": 500,
+            "prob": 0.35
+          },
+          {
+            "food": "Diet Cola",
+            "qty": 330,
+            "prob": 0.25
+          },
+          {
+            "food": "Beer",
+            "qty": 660,
+            "prob": 0.3,
+            "weekendBoost": 2
+          }
+        ],
+        "breakfasts": [
+          {
+            "food": "Croissants",
+            "qty": 2,
+            "weight": 3
+          },
+          {
+            "recipe": "Scrambled Eggs on Toast",
+            "weight": 2
+          },
+          {
+            "food": "White Bread",
+            "qty": 120,
+            "withButter": true,
+            "weight": 3
+          }
+        ]
+      }
+    },
+    {
+      "key": "jordan",
+      "name": "Jordan",
+      "email": "jordan@demo.family",
+      "role": "MEMBER",
+      "birthYear": 2011,
+      "sex": "M",
+      "heightCm": 172,
+      "weightKg": 60,
+      "activityLevel": "VERY_ACTIVE",
+      "dietaryGoals": "Build muscle for football; more energy for training",
+      "allergies": null,
+      "dietType": "OMNIVORE",
+      "favourites": {
+        "recipes": [
+          "Chicken Stir Fry",
+          "Chicken Caesar Wraps",
+          "Scrambled Eggs on Toast",
+          "Chilli con Carne",
+          "Banana Oat Smoothie"
+        ],
+        "foods": [
+          "Protein Bars",
+          "Energy Drink",
+          "Sports Drink",
+          "Chicken Breast"
+        ]
+      },
+      "habits": {
+        "portion": 1.3,
+        "breakfastSkipProb": 0.15,
+        "weekdayLunch": {
+          "packedProb": 0.5,
+          "packedRecipes": [
+            "Chicken Caesar Wraps",
+            "Ham & Cheese Sandwiches"
+          ],
+          "outText": [
+            "School canteen hot meal",
+            "Chips and a sausage roll"
+          ]
+        },
+        "dinnerOutProb": 0.04,
+        "snacks": [
+          {
+            "food": "Protein Bars",
+            "qty": 1,
+            "prob": 0.6
+          },
+          {
+            "food": "Bananas",
+            "qty": 1,
+            "prob": 0.5
+          },
+          {
+            "food": "Greek Yogurt",
+            "qty": 200,
+            "prob": 0.3
+          },
+          {
+            "food": "Sugary Cereal",
+            "qty": 60,
+            "prob": 0.35,
+            "lateNight": true
+          },
+          {
+            "food": "Potato Crisps",
+            "qty": 40,
+            "prob": 0.3
+          }
+        ],
+        "drinks": [
+          {
+            "food": "Energy Drink",
+            "qty": 500,
+            "prob": 0.45
+          },
+          {
+            "food": "Sports Drink",
+            "qty": 500,
+            "prob": 0.5
+          },
+          {
+            "food": "Cola",
+            "qty": 330,
+            "prob": 0.35
+          },
+          {
+            "food": "Whole Milk",
+            "qty": 300,
+            "prob": 0.7
+          },
+          {
+            "food": "Orange Juice",
+            "qty": 250,
+            "prob": 0.3
+          }
+        ],
+        "breakfasts": [
+          {
+            "recipe": "Scrambled Eggs on Toast",
+            "weight": 3
+          },
+          {
+            "recipe": "Banana Oat Smoothie",
+            "weight": 3
+          },
+          {
+            "food": "Sugary Cereal",
+            "qty": 70,
+            "withMilk": true,
+            "weight": 3
+          }
+        ]
+      }
+    },
+    {
+      "key": "mia",
+      "name": "Mia",
+      "email": "mia@demo.family",
+      "role": "MEMBER",
+      "birthYear": 2018,
+      "sex": "F",
+      "heightCm": 128,
+      "weightKg": 26,
+      "activityLevel": "MODERATE",
+      "dietaryGoals": "Try more vegetables (picky eater)",
+      "allergies": "nuts",
+      "dietType": "OMNIVORE",
+      "favourites": {
+        "recipes": [
+          "Chicken Nuggets & Chips",
+          "Pancakes",
+          "Cheese Toasties",
+          "Ice Cream Sundae",
+          "Frozen Pizza Night"
+        ],
+        "foods": [
+          "Strawberry Yogurt",
+          "Apple Juice",
+          "Grapes",
+          "Strawberries"
+        ]
+      },
+      "habits": {
+        "portion": 0.55,
+        "breakfastSkipProb": 0.02,
+        "picky": {
+          "refuseTags": [
+            "fish",
+            "seafood",
+            "vegan",
+            "healthy"
+          ],
+          "refuseProb": 0.45,
+          "fallbackFood": "Cheese Toasties"
+        },
+        "weekdayLunch": {
+          "packedProb": 0,
+          "packedRecipes": [],
+          "outText": [
+            "School lunch"
+          ]
+        },
+        "dinnerOutProb": 0.04,
+        "snacks": [
+          {
+            "food": "Strawberry Yogurt",
+            "qty": 125,
+            "prob": 0.8
+          },
+          {
+            "food": "Grapes",
+            "qty": 80,
+            "prob": 0.4
+          },
+          {
+            "food": "Biscuits",
+            "qty": 30,
+            "prob": 0.5
+          },
+          {
+            "food": "Chocolate Bar",
+            "qty": 20,
+            "prob": 0.25
+          },
+          {
+            "food": "Carrots",
+            "qty": 50,
+            "prob": 0.15
+          }
+        ],
+        "drinks": [
+          {
+            "food": "Apple Juice",
+            "qty": 300,
+            "prob": 0.8
+          },
+          {
+            "food": "Whole Milk",
+            "qty": 200,
+            "prob": 0.7
+          },
+          {
+            "food": "Cola",
+            "qty": 200,
+            "prob": 0.1,
+            "weekendBoost": 2
+          }
+        ],
+        "breakfasts": [
+          {
+            "food": "Sugary Cereal",
+            "qty": 40,
+            "withMilk": true,
+            "weight": 5
+          },
+          {
+            "recipe": "Porridge with Berries",
+            "weight": 2
+          },
+          {
+            "food": "Strawberry Yogurt",
+            "qty": 125,
+            "weight": 2
+          }
+        ]
+      }
+    }
+  ],
+  "eatOutEstimates": {
+    "Salad bar near office": {
+      "kcal": 520,
+      "sugar": 9
+    },
+    "Sushi lunch": {
+      "kcal": 600,
+      "sugar": 12
+    },
+    "Burger and fries": {
+      "kcal": 1150,
+      "sugar": 14
+    },
+    "Meal deal sandwich + crisps": {
+      "kcal": 820,
+      "sugar": 30
+    },
+    "Kebab": {
+      "kcal": 1050,
+      "sugar": 10
+    },
+    "Fried chicken": {
+      "kcal": 1200,
+      "sugar": 8
+    },
+    "School canteen hot meal": {
+      "kcal": 650,
+      "sugar": 15
+    },
+    "Chips and a sausage roll": {
+      "kcal": 900,
+      "sugar": 5
+    },
+    "School lunch": {
+      "kcal": 480,
+      "sugar": 14
+    },
+    "Takeaway pizza": {
+      "kcal": 1100,
+      "sugar": 12
+    },
+    "Chinese takeaway": {
+      "kcal": 1000,
+      "sugar": 25
+    },
+    "Indian takeaway": {
+      "kcal": 1050,
+      "sugar": 15
+    },
+    "Dinner at friends": {
+      "kcal": 750,
+      "sugar": 15
+    }
+  },
+  "familyTakeaways": [
+    "Takeaway pizza",
+    "Chinese takeaway",
+    "Indian takeaway"
+  ]
+}

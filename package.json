@@ -1,0 +1,20 @@
+{
+  "name": "fridgetrack",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "server"
+  ],
+  "scripts": {
+    "generate": "npm run generate -w server",
+    "seed": "npm run seed -w server",
+    "data:report": "npm run data:report -w server",
+    "test": "npm test -w server"
+  },
+  "allowScripts": {
+    "@prisma/client@6.19.3": true,
+    "@prisma/engines@6.19.3": true,
+    "esbuild@0.28.2": true,
+    "prisma@6.19.3": true
+  }
+}

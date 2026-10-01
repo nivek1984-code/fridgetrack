@@ -1,0 +1,250 @@
+// FridgeTrack data model.
+// SQLite has no native enums, so enum-like fields are Strings; allowed values are listed in comments.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Household {
+  id                   String   @id @default(cuid())
+  name                 String
+  inviteCode           String   @unique
+  groceryDayPreference Int      @default(6) // 0 = Sunday ... 6 = Saturday
+  runThresholdDays     Int      @default(2) // propose a run when a staple is this many days from running out
+  createdAt            DateTime @default(now())
+
+  users         User[]
+  foodItems     FoodItem[]
+  recipes       Recipe[]
+  mealPlan      MealPlanEntry[]
+  shoppingItems ShoppingListItem[]
+}
+
+model User {
+  id            String   @id @default(cuid())
+  householdId   String
+  name          String
+  email         String   @unique
+  passwordHash  String
+  role          String   @default("MEMBER") // ADMIN | MEMBER
+  birthYear     Int?
+  sex           String? // F | M | X
+  heightCm      Int?
+  weightKg      Float?
+  activityLevel String? // SEDENTARY | LIGHT | MODERATE | ACTIVE | VERY_ACTIVE
+  dietaryGoals  String?
+  allergies     String? // comma-separated
+  dietType      String   @default("OMNIVORE") // OMNIVORE | VEGETARIAN | VEGAN | PESCATARIAN
+  createdAt     DateTime @default(now())
+
+  household      Household          @relation(fields: [householdId], references: [id], onDelete: Cascade)
+  favourites     Favourite[]
+  eatingLogs     EatingLog[]
+  batchesAdded   InventoryBatch[]
+  events         InventoryEvent[]
+  recipes        Recipe[]
+  shoppingItems  ShoppingListItem[]
+  healthReports  HealthReport[]
+}
+
+model FoodItem {
+  id                    String  @id @default(cuid())
+  householdId           String
+  name                  String
+  category              String // DAIRY | PRODUCE | MEAT | FISH | EGGS | BAKERY | DRINKS | CONDIMENTS | FROZEN | SNACKS | PANTRY
+  defaultUnit           String // g | ml | pcs
+  unitSize              Float // quantity in defaultUnit of one purchasable pack (e.g. 1000 ml milk carton)
+  typicalShelfLifeDays  Int
+  location              String  @default("FRIDGE") // FRIDGE | FREEZER | PANTRY
+  isDrink               Boolean @default(false)
+  isStaple              Boolean @default(false)
+  pricePerPack          Float?
+  // Nutrition per 100 g / 100 ml, or per piece when defaultUnit = pcs
+  kcal                  Float?
+  proteinG              Float?
+  sugarG                Float?
+  satFatG               Float?
+  fibreG                Float?
+  sodiumMg              Float?
+  gramsPerPiece         Float? // for pcs items, used to convert to nutrition
+  allergens             String? // comma-separated, e.g. "nuts"
+
+  household          Household          @relation(fields: [householdId], references: [id], onDelete: Cascade)
+  batches            InventoryBatch[]
+  events             InventoryEvent[]
+  recipeIngredients  RecipeIngredient[]
+  favourites         Favourite[]
+  eatingLogs         EatingLog[]
+  predictions        Prediction[]
+  shoppingItems      ShoppingListItem[]
+
+  @@unique([householdId, name])
+}
+
+model InventoryBatch {
+  id                String    @id @default(cuid())
+  foodItemId        String
+  quantity          Float
+  remainingQuantity Float
+  unit              String
+  purchasedAt       DateTime
+  expiresAt         DateTime?
+  location          String    @default("FRIDGE")
+  addedById         String?
+  status            String    @default("ACTIVE") // ACTIVE | FINISHED | DISCARDED
+  pricePaid         Float?
+
+  foodItem FoodItem         @relation(fields: [foodItemId], references: [id], onDelete: Cascade)
+  addedBy  User?            @relation(fields: [addedById], references: [id], onDelete: SetNull)
+  events   InventoryEvent[]
+
+  @@index([foodItemId, status])
+}
+
+model InventoryEvent {
+  id            String   @id @default(cuid())
+  batchId       String
+  foodItemId    String
+  userId        String?
+  type          String // ADDED | CONSUMED | DISCARDED | ADJUSTED
+  quantityDelta Float // positive for ADDED, negative otherwise
+  source        String? // GROCERY_RUN | MEAL_PLAN | SNACK | SPOILAGE | MANUAL
+  mealPlanEntryId String?
+  note          String?
+  createdAt     DateTime
+
+  batch    InventoryBatch @relation(fields: [batchId], references: [id], onDelete: Cascade)
+  foodItem FoodItem       @relation(fields: [foodItemId], references: [id], onDelete: Cascade)
+  user     User?          @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([foodItemId, createdAt])
+}
+
+model Recipe {
+  id           String  @id @default(cuid())
+  householdId  String
+  name         String
+  mealType     String // BREAKFAST | LUNCH | DINNER | SNACK
+  servings     Int
+  prepMinutes  Int?
+  instructions String?
+  tags         String? // comma-separated
+  createdById  String?
+
+  household   Household          @relation(fields: [householdId], references: [id], onDelete: Cascade)
+  createdBy   User?              @relation(fields: [createdById], references: [id], onDelete: SetNull)
+  ingredients RecipeIngredient[]
+  mealPlan    MealPlanEntry[]
+  favourites  Favourite[]
+  eatingLogs  EatingLog[]
+
+  @@unique([householdId, name])
+}
+
+model RecipeIngredient {
+  id         String @id @default(cuid())
+  recipeId   String
+  foodItemId String
+  quantity   Float // per recipe (for `servings` servings)
+  unit       String
+
+  recipe   Recipe   @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  foodItem FoodItem @relation(fields: [foodItemId], references: [id], onDelete: Cascade)
+}
+
+model MealPlanEntry {
+  id          String    @id @default(cuid())
+  householdId String
+  date        DateTime
+  mealType    String // BREAKFAST | LUNCH | DINNER | SNACK
+  recipeId    String
+  servings    Int
+  cookedAt    DateTime?
+
+  household Household @relation(fields: [householdId], references: [id], onDelete: Cascade)
+  recipe    Recipe    @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  @@index([householdId, date])
+}
+
+model Favourite {
+  id         String    @id @default(cuid())
+  userId     String
+  foodItemId String?
+  recipeId   String?
+  note       String?
+  createdAt  DateTime  @default(now())
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  foodItem FoodItem? @relation(fields: [foodItemId], references: [id], onDelete: Cascade)
+  recipe   Recipe?   @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+}
+
+model EatingLog {
+  id          String   @id @default(cuid())
+  userId      String
+  date        DateTime
+  mealType    String // BREAKFAST | LUNCH | DINNER | SNACK | DRINK
+  recipeId    String?
+  foodItemId  String?
+  quantity    Float? // servings for recipes, defaultUnit amount for food items
+  freeText    String? // e.g. "school lunch", "takeaway pizza"
+  portionSize String? // SMALL | NORMAL | LARGE
+  kcal        Float? // estimated, filled by generator / app
+  sugarG      Float?
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  recipe   Recipe?   @relation(fields: [recipeId], references: [id], onDelete: SetNull)
+  foodItem FoodItem? @relation(fields: [foodItemId], references: [id], onDelete: SetNull)
+
+  @@index([userId, date])
+}
+
+model Prediction {
+  id                  String    @id @default(cuid())
+  foodItemId          String
+  computedAt          DateTime
+  dailyRate           Float
+  currentStock        Float
+  projectedRunOutDate DateTime?
+  confidence          Float // 0..1
+  source              String // HISTORY | MEAL_PLAN | BLEND
+
+  foodItem FoodItem @relation(fields: [foodItemId], references: [id], onDelete: Cascade)
+}
+
+model ShoppingListItem {
+  id          String    @id @default(cuid())
+  householdId String
+  foodItemId  String?
+  name        String
+  quantity    Float
+  unit        String
+  reason      String // RUN_OUT | EXPIRING | MANUAL
+  addedById   String?
+  checked     Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+
+  household Household @relation(fields: [householdId], references: [id], onDelete: Cascade)
+  foodItem  FoodItem? @relation(fields: [foodItemId], references: [id], onDelete: SetNull)
+  addedBy   User?     @relation(fields: [addedById], references: [id], onDelete: SetNull)
+}
+
+model HealthReport {
+  id              String   @id @default(cuid())
+  userId          String
+  periodStart     DateTime
+  periodEnd       DateTime
+  score           Int
+  summary         String
+  recommendations String // JSON string
+  model           String
+  createdAt       DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
