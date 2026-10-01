@@ -22,7 +22,10 @@ export function Fridge() {
       if (q && !b.foodItem.name.toLowerCase().includes(q.toLowerCase())) continue;
       byFood.set(b.foodItemId, [...(byFood.get(b.foodItemId) ?? []), b]);
     }
-    return [...byFood.values()].sort((a, b) => (a[0].daysToExpiry ?? 9999) - (b[0].daysToExpiry ?? 9999));
+    // Soonest expiry first within each item (undated last), then items by their soonest batch.
+    const key = (b: InventoryBatch) => b.daysToExpiry ?? Infinity;
+    const groups = [...byFood.values()].map((bs) => bs.sort((a, b) => key(a) - key(b)));
+    return groups.sort((a, b) => key(a[0]) - key(b[0]));
   }, [inventory.data, loc, q]);
 
   const discard = useStockMutation((id: string) => api(`/inventory/batches/${id}/discard`, { method: "POST", body: {} }));
@@ -46,14 +49,20 @@ export function Fridge() {
           {groups.map((bs) => {
             const f = bs[0].foodItem;
             const total = bs.reduce((s, b) => s + b.remainingQuantity, 0);
-            const soonest = bs[0].daysToExpiry;
+            const expired = bs.filter((b) => b.expiryStatus === "EXPIRED");
+            const expiredQty = expired.reduce((s, b) => s + b.remainingQuantity, 0);
+            // The date that matters is the first batch still in date; past-date stock is flagged separately.
+            const next = bs.find((b) => b.expiryStatus !== "EXPIRED");
             return (
               <div key={f.id} className="card flex flex-col gap-2">
                 <div className="flex items-start justify-between gap-2">
                   <Link to={`/items/${f.id}`} className="flex items-center gap-2 font-medium hover:underline">
                     <span aria-hidden>{CATEGORY_EMOJI[f.category] ?? "🍽️"}</span>{f.name}
                   </Link>
-                  <Badge tone={expiryTone(soonest)}>{soonest === null ? "no date" : soonest < 0 ? "past date" : relDays(soonest)}</Badge>
+                  <div className="flex flex-wrap justify-end gap-1">
+                    {expired.length > 0 && <Badge tone="red"><span aria-hidden>⚠️&nbsp;</span>{next ? `${fmtQty(expiredQty, f.defaultUnit)} past date` : "past date"}</Badge>}
+                    {next && <Badge tone={expiryTone(next.daysToExpiry)}>{next.daysToExpiry === null ? "no date" : `${bs.length > 1 ? `${fmtQty(next.remainingQuantity, next.unit)} ` : ""}${relDays(next.daysToExpiry)}`}</Badge>}
+                  </div>
                 </div>
                 <div className="flex items-baseline justify-between">
                   <span className="text-xl font-semibold tabular-nums">{fmtQty(total, f.defaultUnit)}</span>
@@ -62,11 +71,15 @@ export function Fridge() {
                 <div className="h-1.5 overflow-hidden rounded-full bg-stone-100 dark:bg-stone-800">
                   <div className="h-full bg-emerald-500" style={{ width: `${Math.min(100, (total / Math.max(f.unitSize, 1)) * 100)}%` }} />
                 </div>
-                {bs.length > 1 || (soonest !== null && soonest < 0) ? (
+                {bs.length > 1 || expired.length > 0 ? (
                   <ul className="space-y-1 text-xs">
                     {bs.map((b) => (
                       <li key={b.id} className="flex items-center justify-between">
-                        <span className="muted">{fmtQty(b.remainingQuantity, b.unit)} · {b.expiresAt ? `exp ${new Date(b.expiresAt).toLocaleDateString(undefined, { day: "numeric", month: "short" })}` : "no date"}</span>
+                        <span className={b.expiryStatus === "EXPIRED" ? "font-medium text-red-600 dark:text-red-400" : "muted"}>
+                          {b.expiryStatus === "EXPIRED" && <span aria-hidden>⚠️ </span>}
+                          {fmtQty(b.remainingQuantity, b.unit)} · {b.expiresAt ? `${b.expiryStatus === "EXPIRED" ? "expired" : "exp"} ${new Date(b.expiresAt).toLocaleDateString(undefined, { day: "numeric", month: "short", timeZone: "UTC" })}` : "no date"}
+                          {bs.some((o) => o.location !== b.location) && ` · ${titleCase(b.location)}`}
+                        </span>
                         <button className="btn-danger px-1.5 py-0.5 text-xs" onClick={() => discard.mutate(b.id)} disabled={discard.isPending}>Bin</button>
                       </li>
                     ))}
@@ -74,7 +87,7 @@ export function Fridge() {
                 ) : null}
                 <div className="mt-auto flex gap-2 pt-1">
                   <button className="btn-outline flex-1" onClick={() => setUsing(f)}>Use some</button>
-                  {bs.length === 1 && !(soonest !== null && soonest < 0) && <button className="btn-danger" onClick={() => discard.mutate(bs[0].id)} disabled={discard.isPending}>Bin</button>}
+                  {bs.length === 1 && expired.length === 0 && <button className="btn-danger" onClick={() => discard.mutate(bs[0].id)} disabled={discard.isPending}>Bin</button>}
                 </div>
               </div>
             );
@@ -179,7 +192,7 @@ function NewItemForm({ initialName, onDone, onCancel }: { initialName: string; o
     }),
   );
   return (
-    <form className="space-y-3" onSubmit={async (e) => { e.preventDefault(); const c = await create.mutateAsync(undefined); onDone({ ...c, stock: 0, nextExpiry: null, favouriteId: null }); }}>
+    <form className="space-y-3" onSubmit={async (e) => { e.preventDefault(); const c = await create.mutateAsync(undefined); onDone({ ...c, stock: 0, expiredStock: 0, nextExpiry: null, favouriteId: null }); }}>
       <div><label className="label" htmlFor="nm">Name</label><input id="nm" className="input" value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} required /></div>
       <div className="grid grid-cols-2 gap-3">
         <div><label className="label" htmlFor="cat">Category</label><select id="cat" className="input" value={f.category} onChange={(e) => setF({ ...f, category: e.target.value })}>{CATEGORIES.map((c) => <option key={c} value={c}>{titleCase(c)}</option>)}</select></div>

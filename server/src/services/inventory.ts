@@ -1,6 +1,7 @@
 import type { FoodItem, Prisma } from "@prisma/client";
 import { prisma } from "../db.js";
-import { HttpError, addDays } from "../http.js";
+import { HttpError, addDays, startOfDay } from "../http.js";
+import { groupStock } from "./expiry.js";
 
 type Tx = Prisma.TransactionClient;
 const EPS = 1e-6;
@@ -24,20 +25,10 @@ export async function assertFoodInHousehold(tx: Tx, foodItemId: string, househol
   return f;
 }
 
-/** Current stock per food item (sum of active batches). */
+/** Current stock per food item, with expired quantity split out and the per-batch breakdown kept. */
 export async function stockByFood(householdId: string) {
-  const batches = await prisma.inventoryBatch.findMany({
-    where: { status: "ACTIVE", foodItem: { householdId } },
-    orderBy: { expiresAt: "asc" },
-  });
-  const map = new Map<string, { qty: number; nextExpiry: Date | null; batches: number }>();
-  for (const b of batches) {
-    const e = map.get(b.foodItemId) ?? { qty: 0, nextExpiry: b.expiresAt, batches: 0 };
-    e.qty += b.remainingQuantity;
-    e.batches++;
-    map.set(b.foodItemId, e);
-  }
-  return map;
+  const batches = await prisma.inventoryBatch.findMany({ where: { status: "ACTIVE", foodItem: { householdId } } });
+  return new Map(groupStock(batches).map((s) => [s.foodItemId, s]));
 }
 
 export async function addBatch(
@@ -52,7 +43,8 @@ export async function addBatch(
       remainingQuantity: opts.quantity,
       unit: opts.food.defaultUnit,
       purchasedAt: at,
-      expiresAt: opts.expiresAt === undefined ? addDays(at, opts.food.typicalShelfLifeDays) : opts.expiresAt,
+      // Expiry is a date-only value (midnight UTC of the local calendar day), like the seeded data.
+      expiresAt: opts.expiresAt === undefined ? addDays(startOfDay(at), opts.food.typicalShelfLifeDays) : opts.expiresAt,
       location: opts.location ?? opts.food.location,
       addedById: opts.userId,
       pricePaid: opts.pricePaid ?? null,
